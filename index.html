@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Norton Distribuidora</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/estiloCriado.css">
+    <link rel="stylesheet" href="css/theme_template.css">
+    <link rel="stylesheet" href="css/templateNovo.css">
 </head>
 <body>
     <header class="header header--standard header--market-place-4" data-sticky="true">
@@ -153,8 +153,20 @@
                     </form>
                 </div>
                 <div class="header__content-right">
-                    <div class="header__actions"><a class="header__extra" href="#"><i class="icon-heart"></i><span><i>0</i></span></a>
-                        <div class="ps-cart--mini"><a class="header__extra" href="#"><i class="icon-bag2"></i><span><i>0</i></span></a>
+                    <div class="header__actions">
+                      <a class="header__extra" href="#">
+                        <img src="/public/svg/icone-coracao.svg" alt="Ícone de coração, like.">
+                        <span>
+                          <i>0</i>
+                        </span>
+                      </a>
+                        <div class="ps-cart--mini">
+                          <a class="header__extra" href="#">
+                            <img src="/public/svg/icone-carrinho.svg" alt="Ícone de Carrinho">
+                            <span>
+                              <i>0</i>
+                            </span>
+                          </a>
                             <div class="ps-cart__content">
                                 <div class="ps-cart__items">
                                     <div class="ps-product--cart-mobile">
@@ -177,7 +189,9 @@
                             </div>
                         </div>
                         <div class="ps-block--user-header">
-                            <div class="ps-block__left"><i class="icon-user"></i></div>
+                            <div class="ps-block__left">
+                              <img src="public/svg/icone-perfil.svg" alt="Ícone de Perfil">
+                            </div>
                             <div class="ps-block__right"><a href="my-account.html">Login</a><a href="my-account.html">Register</a></div>
                         </div>
                     </div>
@@ -217,6 +231,45 @@
               </div>
             </div>
         </div>
+        <div class="navigation--mobile">
+          <div class="navigation__left"><a class="ps-logo" href="index.html"><img src="public/logo-norton-distribuidora.png" alt="" /></a></div>
+          <div class="navigation__right">
+              <div class="header__actions">
+                  <div class="ps-cart--mini">
+                    <a class="header__extra" href="#">
+                      <img src="public/svg//icone-carrinho.svg" alt="Ícone de Carrinho">
+                      <span>
+                        <i>0</i>
+                      </span>
+                    </a>
+                      <div class="ps-cart__content">
+                          <div class="ps-cart__items">
+                              <div class="ps-product--cart-mobile">
+                                  <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/7.jpg" alt="" /></a></div>
+                                  <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">MVMTH Classical Leather Watch In Black</a>
+                                      <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                  </div>
+                              </div>
+                              <div class="ps-product--cart-mobile">
+                                  <div class="ps-product__thumbnail"><a href="#"><img src="img/products/clothing/5.jpg" alt="" /></a></div>
+                                  <div class="ps-product__content"><a class="ps-product__remove" href="#"><i class="icon-cross"></i></a><a href="product-default.html">Sleeve Linen Blend Caro Pane Shirt</a>
+                                      <p><strong>Sold by:</strong> YOUNG SHOP</p><small>1 x $59.99</small>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="ps-cart__footer">
+                              <h3>Sub Total:<strong>$59.99</strong></h3>
+                              <figure><a class="ps-btn" href="shopping-cart.html">View Cart</a><a class="ps-btn" href="checkout.html">Checkout</a></figure>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="ps-block--user-header">
+                      <div class="ps-block__left"><a href="my-account.html"><i class="icon-user"></i></a></div>
+                      <div class="ps-block__right"><a href="my-account.html">Login</a><a href="my-account.html">Register</a></div>
+                  </div>
+              </div>
+          </div>
+      </div>
     </header>
 </body>
 </html>

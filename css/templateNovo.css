@@ -117,13 +117,14 @@
   }
   
   .header--standard .ps-form--quick-search .form-group--icon select {
-    height: 40px;
+    height: 35px;
     border: none;
   }
   
   .header--standard .ps-form--quick-search input {
     border: 1px solid #e1e1e1;
     border-left: none;
+    border-radius: 5px 0 0 5px;
   }
   
   .header--standard .header__content {
@@ -140,9 +141,9 @@
     align-items: center;
   }
   
-  .header--standard .header__content .container > * {
+  /* .header--standard .header__content .container > * {
     width: 100%;
-  }
+  } */
   
   .header--standard .header__extra span {
     background-color: #fcb800;
@@ -212,6 +213,8 @@
   
   .header--market-place-4 .header__top .header__top-links li > a {
     color: #FFF;
+    display: flex;
+    align-items: center;
   }
   .header--market-place-4 .header__top .header__top-links li > a > img{
     margin-right: 5px;
@@ -222,6 +225,9 @@
   }
   
   .header--market-place-4 .header__content .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
   }
   
@@ -234,7 +240,7 @@
   }
   
   .header--market-place-4 .header__content-center .ps-form--quick-search button {
-    background-color: #000;
+    background-color: #DD1836;
     color: #fff;
   }
   
