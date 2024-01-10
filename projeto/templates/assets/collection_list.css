@@ -1,0 +1,171 @@
+.collection-header {
+  margin: 0 10px 20px 0;
+  padding: 10px;
+  background-color: var(--cor-bg-blcs-gp, #fff);
+}
+.collection-header .collection-filter {
+  margin-right: 10px;
+}
+.collection-header .collection-grid-column a {
+  margin: 0 5px;
+}
+.collection-grid .collection-grid-card .wishlist button {
+  padding: 0;
+}
+.collection-grid .collection-grid-card.product-card>a .wishlist button.active, .collection-grid .collection-grid-card.product-card>a:hover .wishlist button {
+  display: unset;
+  font-size: 120%;
+  padding: 0;
+}
+.collection-header .collection-grid-column a.active i,
+.collection-header .collection-grid-column a:hover i {
+  opacity: 1;
+}
+.collection-header .collection-grid-column i {
+  display: block;
+  width: .5rem;
+  height: .7rem;
+  margin: 1px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: var(--cor-txt-nome-prto, #000);
+  opacity: .2;
+  transition: .2s;
+}
+.collection-header .collection-grid-column:last-child {
+  display: none;
+}
+.collection-header .collection-filter button,
+.collection-header .collection-limit select,
+.collection-header .collection-sort select {
+  background: 0 0;
+  outline: inherit;
+  padding: 8px 13px;
+  border: 1px solid #ddd;
+  background-color: var(--color-txt-20);
+  width: fit-content;
+  color: var(--cor-txt-nome-prto, #000);
+  border-radius: 3px;
+}
+.collection-header .collection-view-mode {
+  margin: 0 12px;
+}
+.collection-header .collection-view-mode a {
+  border: none;
+  background: 0 0;
+  opacity: .5;
+  margin: 0 5px;
+  padding: 0;
+  font-size: 1.5em;
+  transition: .2s;
+  text-decoration: none;
+  color: var(--cor-txt-nome-prto, #000);
+}
+.collection-header .collection-view-mode a.active,
+.collection-header .collection-view-mode a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+.collection-grid {
+  margin: 0 auto;
+}
+.collection-grid.mode-grid {
+  padding: 0;
+}
+.collection-grid.mode-grid[gap="10"] {
+  --grid-gap: 10px;
+  gap: var(--grid-gap);
+}
+.collection-grid.mode-grid[gap="20"] {
+  --grid-gap: 20px;
+  gap: var(--grid-gap);
+}
+.collection-grid.mode-grid[gap="30"] {
+  --grid-gap: 30px;
+  gap: var(--grid-gap);
+}
+.collection-grid.mode-grid[columns]>.collection-grid-card {
+  -webkit-flex: 0 0 100%;
+  -moz-box-flex: 0;
+  flex: 0 0 100;
+  max-width: 100%;
+}
+.collection-grid.mode-grid .list-only {
+  display: none;
+}
+.collection-grid.mode-list .grid-only {
+  display: none;
+}
+.collection-grid.mode-list .collection-grid-card {
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #efefef;
+}
+.collection-grid .collection-grid-card figure img {
+  webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.collection-grid .collection-grid-card.product-card>a,
+.collection-grid .collection-grid-card.product-card>a:hover {
+  text-decoration: none;
+  color: #000;
+}
+@media (max-width:400px) {
+  .collection-header .collection-sort {
+    flex-grow: 1;
+  }
+  .collection-header .collection-sort select {
+    width: 100%;
+  }
+  .collection-view-mode {
+    margin: 10px 0 10px auto !important;
+  }
+}
+@media (min-width:600px) {
+  .collection-grid.mode-grid[columns="2"]>.collection-grid-card {
+    -webkit-flex: 0 0 calc(50% - var(--grid-gap));
+    -moz-box-flex: 0;
+    flex: 0 0 calc(50% - var(--grid-gap));
+    max-width: calc(50% - var(--grid-gap));
+  }
+  .collection-grid.mode-grid[columns="3"]>.collection-grid-card,
+  .collection-grid.mode-grid[columns="4"]>.collection-grid-card {
+    -webkit-flex: 0 0 calc(33.33333% - var(--grid-gap));
+    -moz-box-flex: 0;
+    flex: 0 0 calc(33.33333% - var(--grid-gap));
+    max-width: calc(33.33333% - var(--grid-gap));
+  }
+}
+@media (min-width:993px) {
+  .collection-grid.mode-grid[columns="4"]>.collection-grid-card {
+    -webkit-flex: 0 0 calc(25% - var(--grid-gap));
+    -moz-box-flex: 0;
+    flex: 0 0 calc(25% - var(--grid-gap));
+    max-width: calc(25% - var(--grid-gap));
+  }
+}
+/*MODO LISTA*/
+.collection-grid.mode-list {
+  flex-flow: column nowrap !important;
+  gap: 0.938rem;
+  padding-right: 10px;
+}
+.collection-grid.mode-list .product-card-list, .collection-grid.mode-grid .product-card-list {
+  gap: 0.938rem;
+  padding: 0.938rem;
+  height: 17.625rem;
+}
+@media (max-width: 1200px) {
+  .collection-grid.mode-list .product-card-list {
+    height: auto;
+  }
+  .collection-header {
+    margin: 0;
+  }
+}
+@media (max-width: 600px) {
+  .collection-grid.mode-grid[colums-list="2"] .collection-grid-card {
+    max-width: 48%;
+  }
+}

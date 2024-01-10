@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Norton Distribuidora</title>
+ <style>
+  section#contador___container{
+   background-color: #000;
+   color: #FFF;
+   padding: 5px;
+  }
+  .container___contador{
+   display:flex;
+   flex-direction: row;
+   margin: 15px;
+   align-items: center;
+  }
+  .container___contador p{
+   margin-right: 15px;
+  }
+  .___contador{
+   color: white;
+   background: red;
+   display: flex;
+   align-items: center;
+   padding: 15px;
+   height: 5px;
+   font-size: 18px;
+   font-weight: 700;
+   border-radius: 2.5px;
+  }
+  #contador___oferta{
+   color: #FFF;
+   font-size: 16px;
+  }
+  @media (max-width: 768px){
+   .container___contador{
+    justify-content: center;
+   }
+  }
+  @media (max-width: 450px){
+   #contador___oferta{
+    color: #FFF;
+    font-size: 12px;
+   }
+   #contador___oferta{
+    color: #FFF;
+     font-size: 16px;
+     padding: 0;
+     margin: 5px;
+   }
+   .___contador{
+    color: white;
+     background: red;
+     display: flex;
+     align-items: center;
+     padding: 15px;
+     height: 5px;
+     font-size: 18px;
+     font-weight: 700;
+     border-radius: 2.5px;
+     margin-bottom: 5px;
+   }
+   .container___contador{
+    flex-direction: column;
+   }
+  }
+ </style>
+</head>
+<body style="margin: 0; padding: 0;">
+ <section id="contador___container">
+  <div class="container___contador">
+   <p id="contador___oferta">Ofertas do dia:</p>
+   <div class="___contador">
+   </div>
+  </div>
+ </section>
+ <script>
+  const dataInicial = new Date();
+  const dataFinal = new Date(2024, 00, 10);
+  function calcularDiferencaDatas(dataInicial, dataFinal) {
+   const inicio = new Date(dataInicial);
+   const fim = new Date(dataFinal);
+   const diferencaEmMilissegundos = fim - inicio;
+   const dias = Math.floor(diferencaEmMilissegundos / (1000 * 60 * 60 * 24));
+   const horas = Math.floor((diferencaEmMilissegundos % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+   const minutos = Math.floor((diferencaEmMilissegundos % (1000 * 60 * 60)) / (1000 * 60));
+   const segundos = Math.floor((diferencaEmMilissegundos % (1000 * 60)) / 1000);
+   return {
+     dias,
+     horas,
+     minutos,
+     segundos
+   };
+  }
+  let resultado = calcularDiferencaDatas(new Date(), dataFinal);
+   let contador = document.querySelector('.___contador');
+   contador.innerHTML = `Termina em ${resultado.dias.toString().padStart(2, '0')} : ${resultado.horas.toString().padStart(2, '0')} : ${resultado.minutos.toString().padStart(2, '0')} : ${resultado.segundos.toString().padStart(2, '0')}`;
+  setInterval(()=>{
+   let resultado = calcularDiferencaDatas(new Date(), dataFinal);
+   let contador = document.querySelector('.___contador');
+   contador.innerHTML = `Termina em ${resultado.dias.toString().padStart(2, '0')} : ${resultado.horas.toString().padStart(2, '0')} : ${resultado.minutos.toString().padStart(2, '0')} : ${resultado.segundos.toString().padStart(2, '0')}`;
+  }, 1000);
+
+ </script>
+</body>
+</html>

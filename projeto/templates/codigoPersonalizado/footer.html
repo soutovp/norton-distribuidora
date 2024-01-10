@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Footer Norton</title>
+ <style>
+  body{
+   margin: 0;
+   padding: 0;
+  }
+  .norton-footer{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   background-color: #333;
+   color: #FFF;
+  }
+  .norton-footer > section{
+   box-sizing: border-box;
+   width: 20%;
+   padding: 5px;
+   margin: 2.5%;
+  }
+  .norton-footer section hr{
+   border: 2px solid red;
+   border-radius: 1px;
+  }
+  .norton-footer ul{
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+  }
+  .norton-footer ul li{
+   margin: 5px 0;
+  }
+  @media (max-width: 1200px){
+   .norton-footer .section-categorias, .norton-footer .section-institucional{
+    display: none;
+   }
+   .norton-footer > section{
+    box-sizing: border-box;
+    width: 45%;
+    padding: 5px;
+    margin: 2.5%;
+   }
+  }
+  @media (max-width: 600px){
+   .norton-footer{
+    flex-direction: column;
+    justify-content: center;
+   }
+   .norton-footer > section {
+    width: auto;
+   }
+   .norton-footer > section h3{
+    text-align: center;
+   }
+   .norton-footer-redes > div{
+    display: flex;
+    justify-content: center;
+   }
+   .section-contato > div.atendimento > ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   }
+   .section-contato > div.atendimento > ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   }
+  }
+ </style>
+</head>
+<body>
+ <!--
+ {% if (section.id != "pages_content" or "lp" not in section.slug or variables.cms_rodape.cms_exibe_lp) %}
+{% if variables.cms_rodape.cms_bg_newsletter is not empty %}
+Inclusão da Newsletter
+{% include 'snippets/newsletter.tpl' %}
+Fim inclus?o
+{% endif %}
+-->
+ <footer class="norton-footer">
+  <section class="section-sobre">
+   <div class="norton-footer-sobre">
+    <h3>Sobre a loja</h3>
+    <hr>
+    <p><!--{{ variables.informacoes_loja.sobre_norton }}--></p>
+   </div>
+   <div class="norton-footer-redes">
+    <h3>Redes Sociais</h3>
+    <hr>
+    <div>
+      <a href="#" class="norton-redes">
+       <img src="#" alt="Facebook">
+      </a>
+      <a href="#" class="norton-redes">
+       <img src="#" alt="Instagram">
+    </div>
+    </a>
+   </div>
+  </section>
+  <section class="section-categorias">
+   <h3>Categorias</h3>
+   <hr>
+   <ul>
+    <li>Hello World</li>
+    <li>Hello World</li>
+    <li>Hello World</li>
+    <li>Hello World</li>
+    <li>Hello World</li>
+    <li>Hello World</li>
+    <li>Hello World</li>
+    <li>Hello World</li> 
+   </ul>
+  </section>
+  <!--{% if variables.cms_rodape.cms_coluna_b is not empty %}-->
+  <section class="section-institucional">
+   <h3>{{ variables.cms_rodape.cms_coluna_b|raw }}</h3>
+   <hr>
+   <ul>
+    {% for page in pages|slice(0,10) %}
+          <li>
+            <a href="{{page.url}}">{{ page.title | raw }}</a>
+          </li>
+          {% endfor %}
+   </ul>
+  </section>
+  <!--{% endif %}-->
+  <section class="section-contato">
+   <div class="atendimento">
+    <h3>Central de Atendimento</h3>
+    <hr>
+    <ul>
+     <li>
+      <img src="{{ variables.icones_loja.telefone_white }}" alt="Icone">
+      <p>Telefone</p>
+     </li >
+     <li>
+      <img src="{{ variables.icones_loja.whatsapp_white }}" alt="Icone">
+      <p>Whatsapp</p>
+     </li >
+     <li>
+      <img src="{{ variables.icones_loja.email_white }}" alt="Icone">
+      <p>E-mail</p>
+     </li >
+    </ul>
+   </div>
+   <div class="horario">
+    <h3>Horário de Atendimento</h3>
+    <hr>
+    <p>seg a sexta de 08h às 18h</p>
+   </div>
+  </section>
+ </footer>
+</body>
+</html>

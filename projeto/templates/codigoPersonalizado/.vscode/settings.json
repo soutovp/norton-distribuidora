@@ -1,0 +1,11 @@
+{
+ "files.associations": {
+  "*.html": "html",
+  "*.tpl": "twig"
+},
+"emmet.includeLanguages": {
+  "twig": "html",
+  "html": "twig"
+},
+"liveServer.settings.port": 5501,
+}

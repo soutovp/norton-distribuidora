@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Norton Distribuidora</title>
+ <style>
+  /* HEADER TOP --------------------*/
+  .header___top{
+   background-color: #5B5B5B;
+   color: #FFF;
+  }
+  .header___top ul{
+   margin: 0;
+   padding: 0;
+   list-style: none;
+  }
+  .header___top li{
+   display: flex;
+   align-items: center;
+   gap: 5px;
+   padding: 10px;
+  }
+  .header___top a{
+   color: #FFF;
+   text-decoration: none;
+  }
+  /* MENU --------------------*/
+  .header__menu{
+   background-color: #333;
+   color: #FFF;
+  }
+  .header__menu{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   padding: 10px;
+  }
+  #logoNorton{
+   width: 150px;
+  }
+  .menu_hamburger{
+   margin: auto 0;
+  }
+  .header__menu div.hamburger{
+   width: 25px;
+   height: 2px;
+   background-color: #FFF;
+   border-radius: 1px;
+   margin: 14px 0;
+  }
+  .header__menu div.hamburger::before{
+   display: block;
+   content: "";
+   position: relative;
+   top: -8px;
+   width: 25px;
+   height: 2px;
+   background-color: #FFF;
+   border-radius: 1px;
+  }
+  .header__menu div.hamburger::after{
+   display: block;
+   content: "";
+   position: relative;
+   top: 6px;
+   width: 25px;
+   height: 2px;
+   background-color: #FFF;
+   border-radius: 1px;
+  }
+  #button_hamburger{
+   background: none;
+   color: transparent;
+   border: none;
+  }
+  #__menu{
+   transition: .5s ease-in-out;
+  }
+  @media (max-width: 1200px){
+   .header___top ul{
+    font-size: x-small;
+   }
+   .header___top li > img{
+    width: 24px;
+   }
+   .header___top ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   }
+   .header___top > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   #__menu{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 80vw;
+    background: #FFF;
+   }
+  }
+  @media (max-width: 370px){
+   .header___top > div > p{
+    font-size: 10px
+   }
+   .header___top li{
+    gap: 2.5px;
+    padding: 5px;
+   }
+   .header___top li > img{
+    width: 16px;
+   }
+   
+  }
+ </style>
+</head>
+<body style="margin: 0; padding: 0;">
+ <header>
+  <!-- HEADER TOP =============================================== -->
+  <div class="header___top">
+   <div>
+    <p>Horário de Atendimento - Seg a Sex de 08h às 18h.</p>
+   </div>
+   <div>
+    <ul>
+     <a href="#">
+      <li>
+       <img src="./img/balao-de-chat.svg" alt="Chat">
+       Fale Conosco
+      </li>
+     </a>
+     <a href="#">
+      <li>
+       <img src="./img/icone-de-whatsapp.svg" alt="Ícone de Whatsapp">
+       (21) 9 7008-3348
+     </li>
+     </a>
+     <a href="#">
+      <li>
+       <img src="./img/icone-de-telefone.svg" alt="Ícone de Telefone">
+       (21) 3094-0150
+     </li>
+     </a>
+    </ul>
+   </div>
+  </div>
+  <!-- MENU OPEN / CLOSE ======================================== -->
+  <div id="__menu" style="transform: translateX(-100%)">
+   <!-- AQUI ENTRARÁ O CÓDIGO DO MENU -->
+  </div>
+  <!-- HEADER MENU ============================================== -->
+  <div class="header__menu">
+   <div class="menu_hamburger">
+    <button id="button_hamburger" onClick="">
+     <div class="hamburger"></div>
+    </button>
+   </div>
+   <div class="menu__logo">
+    <img id="logoNorton" src="../public/logo-norton-distribuidora.png" alt="Logo Norton Distribuidora">
+   </div>
+  </div>
+  <!-- END -->
+ </header>
+ <script>
+  let menu = document.getElementById('__menu');
+  let button_hamburger = document.getElementById('button_hamburger');
+
+  button_hamburger.addEventListener('click',()=>{
+   console.log(menu.style.transform)
+   menu.style.transform == 'translateX(-100%)' ? menu.style.transform = 'translateX(0)' : menu.style.transform = 'translateX(-100%)'
+  })
+ </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .carousel-container {
+      width: 95%;
+      margin: 50px auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-track {
+      display: flex;
+      flex-direction: row;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 33%;
+      box-sizing: border-box;
+      padding: 0 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: #333;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    #prevButton {
+      left: 10px;
+    }
+
+    #nextButton {
+      right: 10px;
+    }
+    .carousel-title{
+      display: flex;
+      justify-content: center;
+    }
+    .carousel-title > div > hr{
+      width: 50%;
+      border: 2px solid red;
+      border-radius: 2px;
+    }
+  </style>
+  <title>Carousel Example</title>
+</head>
+<body>
+  <div class="carousel-title">
+    <div>
+      <h2>Marca que amamos!</h2>
+      <hr>
+    </div>
+  </div>
+  <div class="carousel-container">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-item"><img src="{{ variables.marcas.bic }}" alt="Marca BIC"></div>
+      <div class="carousel-item"><img src="{{ variables.marcas.melita }}" alt="Marca Melita"></div>
+      <div class="carousel-item"><img src="{{ variables.marcas.pilot }}" alt="Marca Pilot"></div>
+      <div class="carousel-item"><img src="{{ variables.marcas.prafesta }}" alt="Marca Prafesta"></div>
+      <div class="carousel-item"><img src="{{ variables.marcas.jaguar }}" alt="Marca Jaguar"></div>
+      <div class="carousel-item"><img src="{{ variables.marcas.uniao }}" alt="Marca União"></div>
+      <!-- Adicione mais marcas conforme necessário -->
+     </div>
+     <button class="carousel-button" id="prevButton">&#8249;</button>
+     <button class="carousel-button" id="nextButton">&#8250;</button>
+    </div>
+    
+    <script>
+      let podeAvancar = true;
+      document.addEventListener('DOMContentLoaded', function () {
+        const track = document.getElementById('carouselTrack');
+        const itemWidth = document.querySelector('.carousel-item').offsetWidth;
+        for (let i = 0; i < 0; i++) {
+          const clones = document.querySelector('.carousel-item').cloneNode(true);
+          track.appendChild(clones);
+        };
+        function avancar(){
+            track.style.transition = 'transform 0.5s ease-in-out';
+            track.style.transform = `translateX(${-itemWidth}px)`;
+    
+            setTimeout(function () {
+              track.style.transition = 'none';
+              track.appendChild(track.firstElementChild);
+              track.style.transform = 'translateX(0)';
+            }, 500);
+        };
+        let intervalo = setInterval(avancar,2000);
+
+        document.getElementById('nextButton').addEventListener('click', function () {
+          clearInterval(intervalo);
+          if(podeAvancar){
+            track.style.transition = 'transform 0.5s ease-in-out';
+            track.style.transform = `translateX(${-itemWidth}px)`;
+            
+            setTimeout(function () {
+              track.style.transition = 'none';
+              track.appendChild(track.firstElementChild);
+              track.style.transform = 'translateX(0)';
+            }, 500);
+            
+            intervalo = setInterval(avancar,2000);
+            
+            podeAvancar = false;
+            setTimeout(()=>{
+              podeAvancar = true;
+            },500)
+          }
+        });
+        document.getElementById('prevButton').addEventListener('click', function () {
+          clearInterval(intervalo);
+          if(podeAvancar){
+            track.style.transition = 'none';
+            track.style.transform = `translateX(${-itemWidth}px)`;
+            track.insertBefore(track.lastElementChild, track.firstElementChild);
+            
+            setTimeout(function () {
+              track.style.transition = 'transform 0.5s ease-in-out';
+              track.style.transform = 'translateX(0)';
+            }, 20);
+            intervalo = setInterval(avancar,2000);
+            podeAvancar = false;
+            setTimeout(()=>{
+              podeAvancar = true;
+            },500)
+          }
+        });
+      });
+    </script>
+</body>
+</html>

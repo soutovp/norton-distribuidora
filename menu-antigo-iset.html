@@ -1,0 +1,181 @@
+{# MENU ANTIGO #}
+<div class="header-menu">
+    <div class="automatic-menu container-menu">
+      <div class="close-header-fixMenu">
+        <i class="fal fa-times"> 
+        </i>
+      </div>
+      <div class="store-menu">
+        <div class="header-customer-menu">
+          <div class="menu-store-logo">
+            <a href="/index.php">
+              <img alt="logo-loja" src="{{images.logo}}" title="loja" /> 
+            </a>
+          </div>
+          <div class="customer-area-menu">
+            <a href="{{goto.login}}">
+              <span class="icon-menu-user"> 
+                <i class="fas fa-user-circle"> 
+                </i> 
+              </span> 
+              <span class="login-texto">ENTRAR / CADASTRAR 
+              </span> 
+            </a>
+          </div>
+        </div>
+        <div id="menu">
+          <ul class="list-categories">
+            {% set categoryLimit = variables.cms_cabecalho.cms_category_limit %}
+            {% set categoryLimit = categoryLimit < categories|length ? categoryLimit : categories|length + 1 %}
+            {% set categoryCount = 0 %}
+            {% set categoryIndex = 0 %}
+            {% for category in categories %} 
+            {% set categoryCount = categoryCount + 1 %}
+            {% if (categoryCount < categoryLimit) %}
+            {% set categoryPos = '' %}
+            <!-- load category media -->
+            {% set categoryTag = 'menu_' ~ category.name|convert_encoding('UTF-8', 'ISO-8859-1')|slug('_')|lower %}
+            {% set categoryMedia = showcase.getByTag(categoryTag) %}
+            {% if categoryMedia == false %}
+            {% set categoryMedia = banners.getByTag([categoryTag]) %}
+            {% endif %}
+            <!-- defines dropdown position -->
+            {% if variables.cms_cabecalho.cms_menu_full and (category.subCategories|length > 24) %}
+            {% set categoryPos = 'drop-full' %}
+            {% elseif categoryMedia %}
+            {% set categoryPos = 'drop-center' %}
+            {% elseif categories|length > 4 %}
+            {% set categoryIndex = categoryIndex + 1 %}
+            {% set leftCount = ((categories|length / 3) * 2)|round %}
+            {% if categoryIndex > leftCount %}
+            {% set categoryPos = 'drop-right' %}
+            {% endif %}
+            {% endif %}
+            <li class="has-sub has-sub-main">
+              {% if category.subCategories|length != 0 %}
+              <span class="submenu-button"> 
+                <i class="far fa-angle-down"> 
+                </i> 
+                <i class="far fa-angle-up"> 
+                </i> 
+              </span>
+              {% endif %}
+              <a href="{{category.url}}">
+                {% if category.img_h %}
+                <img alt="icone_categoria" class="menu-icon" src="{{category.img_h}}" />
+                {% endif %}    
+                {{category.name | raw}}
+              </a>
+              <!-- defines column count -->
+              {% if category.subCategories|length != 0 %}
+              {% if category.subCategories|length > 24 %}
+              {% set columns = 3 %}
+              {% elseif category.subCategories|length >= 12 %}
+              {% set columns = 2 %}
+              {% else %}
+              {% set columns = 1 %}
+              {% endif %}
+              <ul class="{{categoryPos}} {{ categoryMedia ? 'break-drop' : ''}} {{ (variables.cms_cabecalho.cms_menu_anim) ? 'menu-anim' : '' }}">
+                <div class="menu_item_drop col-{{columns}}">
+                  {% for subcategory in category.subCategories %}
+                  <li class="has-sub menu-subcategory">
+                    <a href="{{subcategory.url}}">{{subcategory.name | raw}}</a>
+                    {% if subcategory.subCategories|length != 0 %}
+                    <span class="submenu-button"> 
+                      <i class="far fa-angle-down">
+                      </i>
+                      <i class="far fa-angle-up">
+                      </i>
+                    </span>
+                    <span class="arrows-desk">
+                      <i class="fal fa-chevron-right">
+                      </i>
+                    </span>
+                    <ul>
+                      <div class="menu_item_drop">
+                        {% for subsubcategory in subcategory.subCategories %}
+                        <li>
+                          <a href="{{subsubcategory.url}}">{{subsubcategory.name | raw}}</a>
+                        </li>
+                        {% endfor %}
+                      </div>
+                    </ul>
+                    {% endif %}
+                  </li>
+                  {% endfor %}
+                </div>
+                {% if categoryMedia %}
+                <div class="menu_image_drop" id="{{categoryTag}}">
+                  {{categoryMedia}}
+                </div>
+                {% endif %}
+              </ul>
+              {% endif %}
+            </li>
+            {% endif %}
+            {% endfor %}
+            {% if (categoryCount > categoryLimit) %}
+            <li class="has-sub has-sub-main">
+              <span class="submenu-button"> 
+                <i class="far fa-angle-down"> 
+                </i> 
+                <i class="far fa-angle-up"> 
+                </i> 
+              </span>
+              <a href>              
+                Outras Categorias
+              </a>
+              <!-- OUTRAS CATEGORIAS-->
+              {% set otherColumns = (categoryCount - categoryLimit + 1) > 10 ? 2 : 1 %}
+              <ul class="drop-right {{ categoryMedia ? 'break-drop' : ''}}">
+                <div class="menu_item_drop col-{{otherColumns}}">
+                  {% set nextCategory  = categoryLimit - 1 %}
+                  {% set categoryCount = 0 %}
+                  {% for category in categories %}
+                  {% set categoryCount = categoryCount + 1 %}
+                  {% if (categoryCount > nextCategory) %}
+                  <li class="has-sub menu-subcategory">
+                    <a href="{{category.url}}">{{category.name | raw}}</a>                
+                    {% if category.subCategories|length != 0 %}                
+                    <span class="submenu-button"> 
+                      <i class="far fa-angle-down">
+                      </i>
+                      <i class="far fa-angle-up">
+                      </i>
+                    </span>
+                    <span class="arrows-desk">
+                      <i class="fal fa-chevron-right">
+                      </i>
+                    </span>
+                    <ul>
+                      <div class="menu_item_drop">
+                        {% for subcategory in category.subCategories %}
+                        <li>
+                          <a href="{{subcategory.url}}">{{subcategory.name|raw}}</a>
+                        </li>
+                        {% endfor %}
+                      </div>
+                    </ul>
+                    {% endif %}
+                  </li>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </ul>
+              <!-- FIM OUTRAS CATEGORIAS-->
+            </li>
+            {% endif %}
+            {# Adiciona classe extended no menu caso a quantidade de categorias a ser exibida seja superior a 10 #}          
+            {% if categoryCount > 10 and categoryLimit > 10 %}
+            <script>
+              $('.header-menu').addClass('extended');
+            </script>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="grayBottom">
+    </div>
+  </div>
+  {# FIM DO MENU ANTIGO #}

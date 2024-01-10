@@ -1066,7 +1066,7 @@ figure {
 }
 
 .ps-document blockquote:before {
-  content: '“';
+  content: '?';
   position: absolute;
   top: 10px;
   left: 30px;
@@ -1418,7 +1418,7 @@ body {
 }
 
 .ps-list--arrow a:before {
-  content: "\f0da";
+  content: "f0da";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1562,7 +1562,7 @@ body {
 }
 
 .ps-list--categories li .sub-toggle i:before {
-  content: "\e93a";
+  content: "e93a";
   font-family: 'Linearicons' !important;
 }
 
@@ -2056,7 +2056,7 @@ textarea.form-control {
 }
 
 .ps-number span.up:before {
-  content: "\f106";
+  content: "f106";
 }
 
 .ps-number span.down {
@@ -2065,7 +2065,7 @@ textarea.form-control {
 }
 
 .ps-number span.down:before {
-  content: "\f107";
+  content: "f107";
 }
 
 .ps-number span:hover {
@@ -2645,7 +2645,7 @@ textarea.form-control {
 }
 
 .ps-dropdown > a:after {
-  content: "\e93a";
+  content: "e93a";
   font: normal normal normal 12px/1 linearicons;
   position: absolute;
   top: 50%;
@@ -2836,7 +2836,7 @@ textarea.form-control {
 }
 
 .select2 .select2-selection--single .select2-selection__arrow:before {
-  content: '\f107';
+  content: 'f107';
   font-family: FontAwesome;
   position: absolute;
   top: 50%;
@@ -3712,7 +3712,7 @@ textarea.form-control {
 .ps-block--user-header .ps-block__right {
   padding-left: 10px;
   margin: auto;
-  color: #DD1836;
+  color: #FFFFFF;
 }
 
 .ps-block--user-header .ps-block__right a {
@@ -3722,7 +3722,7 @@ textarea.form-control {
 }
 
 .ps-block--user-header .ps-block__right a:hover {
-  color: #ffffff;
+  color: #DD1836;
 }
 
 .ps-block--site-features {
@@ -5691,7 +5691,7 @@ textarea.form-control {
 }
 
 .ps-block--instagram:before {
-  content: '\f16d';
+  content: 'f16d';
   font-family: FontAwesome;
   position: absolute;
   top: 50%;
@@ -7039,7 +7039,7 @@ textarea.form-control {
 }
 
 .widget_sidebar ul li a:before {
-  content: '\f105';
+  content: 'f105';
   font-family: FontAwesome;
   visibility: hidden;
   opacity: 0;
@@ -7543,7 +7543,7 @@ textarea.form-control {
 }
 
 .widget--vendor .ps-list--arrow a:before {
-  content: "\f105";
+  content: "f105";
   font-size: 20px;
 }
 
@@ -8750,7 +8750,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .ps-product--detail .ps-product__variants .item .ps-video:before {
-  content: '\f04b';
+  content: 'f04b';
   font-family: FontAwesome;
   position: absolute;
   top: 50%;
@@ -9548,7 +9548,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .ps-product--detail .ps-product__thumbnail[data-vertical='false'] .ps-product__variants .slick-arrow:first-child i:before {
-  content: '\f104';
+  content: 'f104';
 }
 
 .ps-product--detail .ps-product__thumbnail[data-vertical='false'] .ps-product__variants .slick-arrow:last-child {
@@ -9556,7 +9556,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .ps-product--detail .ps-product__thumbnail[data-vertical='false'] .ps-product__variants .slick-arrow:last-child i:before {
-  content: '\f105';
+  content: 'f105';
 }
 
 .ps-product--detail .ps-product__thumbnail[data-vertical='false'] .ps-product__variants .slick-arrow:hover i {
@@ -12154,7 +12154,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .ps-form--vendor-datetimepicker .input-group:after {
-  content: '\e789';
+  content: 'e789';
   font-family: 'Linearicons';
   position: absolute;
   top: 50%;
@@ -13929,7 +13929,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .ps-shopping-cart .ps-section__footer figure figcaption:after {
-  content: '\e93a';
+  content: 'e93a';
   font-family: 'Linearicons';
   position: absolute;
   top: 50%;
@@ -15394,7 +15394,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   color: #FFF;
 }
 .icon-menu:before{
-  content: "\e92b";
+  content: "e92b";
 }
 .menu--product-categories .menu__toggle span {
   font-size: 20px;
@@ -15599,7 +15599,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 /*4. MODULES */
 .navigation {
-  background-color: #000;
+  /*background-color: #000;*/
+  background: linear-gradient(180deg, #555, #333);
   border-top: 1px solid #DD1836;
 }
 
@@ -15660,11 +15661,13 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .header .header__extra {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   position: relative;
   width: 30px;
   height: 42px;
   transition: all .4s ease;
+
 }
 
 .header .header__extra > i {
@@ -15932,7 +15935,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .header--standard.header--sticky .ps-logo {
   display: none;
 }
-
+.header--standard.header--sticky .ps-logo img{
+  width: 250px;
+}
 @media (max-width: 1199px) {
   .header--standard {
     display: none;
@@ -16186,7 +16191,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .header--mobile-categories .header__filter button:after {
-  content: '\e93a';
+  content: 'e93a';
   font-family: Linearicons;
   margin-left: 20px;
 }
@@ -16223,7 +16228,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .header--mobile-categories .header__filter .header__sort .select2 .select2-selection .select2-selection__arrow:before {
-  content: '\e93a';
+  content: 'e93a';
   font-family: Linearicons;
 }
 

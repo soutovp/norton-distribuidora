@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+     :root {
+      --azulprimario: rgba(0, 70, 190, 1);
+      --azulsecundario: rgba(1, 49, 150, 1);
+      --azulterciario: rgba(0, 24, 91, 1);
+      --azullinks: rgba(37, 124, 255, 1);
+      --textlight: rgba(255, 255, 255, 1);
+      --vermelhoprimario: rgba(221, 24, 54, 1);
+      --vermelhosecundario: rgba(198, 32, 61, 1);
+      --vermelhoterciario: rgba(130, 16, 27, 1);
+      --vermelhohighlight: rgba(255, 0, 0, 1);
+      --amareloprimario: rgba(242, 187, 19, 1);
+      --amarelosecundario: rgba(217, 147, 17, 1);
+      --variable-collection-prim-ria-normal: rgba(252, 184, 0, 1);
+      --variable-collection-text-dark: rgba(0, 0, 0, 1);
+    }
+     .frame {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 20px;
+      position: relative;
+      border-radius: 3px;
+      border: 1px solid;
+      border-color: #00000026;
+    }
+    
+    .frame .text-wrapper {
+      position: relative;
+      width: fit-content;
+      margin-top: -1px;
+      font-family: "Inter-Bold", Helvetica;
+      font-weight: 700;
+      color: var(--variable-collection-text-dark);
+      font-size: 20px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+    
+    .frame .div-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 20px;
+      height: 20px;
+      align-items: flex-start;
+      gap: 10px;
+      position: relative;
+    }
+    
+    .frame .div {
+      position: relative;
+      width: 20px;
+      height: 19px;
+      margin-top: -0.5px;
+      font-family: "Inter-Bold", Helvetica;
+      font-weight: 700;
+      color: var(--variable-collection-text-dark);
+      font-size: 20px;
+      text-align: center;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="text-wrapper" id="menos">-</div>
+      <div class="div-wrapper"><input style="border: none;" id="quantidade" value="1"></div>
+      <div class="text-wrapper" id="mais">+</div>
+    </div>
+    <script>
+     let qtd = document.querySelector('#quantidade');
+     let menos = document.querySelector('#menos');
+     let mais = document.querySelector('#mais');
+     menos.addEventListener('click',()=>{
+      if(qtd.value > 0){
+       qtd.value = parseInt(qtd.value)-1;
+      }else{
+       return
+      }
+     })
+     mais.addEventListener('click', ()=>{
+      qtd.value = parseInt(qtd.value)+1;
+      return;
+     })
+    </script>
+  </body>
+</html>

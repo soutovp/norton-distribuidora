@@ -1,0 +1,151 @@
+{# INICIO DE CODIGO ----------------------------------------- #}
+<ul class="menu--dropdown">
+    {% set categoryLimit = variables.cms_cabecalho.cms_category_limit %}
+    {% set categoryLimit = categoryLimit < categories|length ? categoryLimit : categories|length + 1 %}
+    {% set categoryCount = 0 %}
+    {% set categoryIndex = 0 %}
+    {% for category in categories %}
+    {% set categoryCount = categoryCount + 1 %}
+    {% if (categoryCount < categoryLimit) %}
+    {% set categoryPos = '' %}
+    <!-- load category media -->
+    {% set categoryTag = 'menu_' ~ category.name|convert_encoding('UTF-8', 'ISO-8859-1')|slug('_')|lower %}
+    {% set categoryMedia = showcase.getByTag(categoryTag) %}
+    {% if categoryMedia == false %}
+    {% set categoryMedia = banners.getByTag([categoryTag]) %}
+    {% endif %}
+    <!-- defines dropdown position -->
+    {% if variables.cms_cabecalho.cms_menu_full and (category.subCategories|length > 24) %}
+    {% set categoryPos = 'drop-full' %}
+    {% elseif categoryMedia %}
+    {% set categoryPos = 'drop-center' %}
+    {% elseif categories|length > 4 %}
+    {% set categoryIndex = categoryIndex + 1 %}
+    {% set leftCount = ((categories|length / 3) * 2)|round %}
+    {% if categoryIndex > leftCount %}
+    {% set categoryPos = 'drop-right' %}
+    {% endif %}
+    {% endif %}
+      {# <li class="menu-item-has-children has-mega-menu">
+        <a href="{{category.url}}">
+          {% if category.img_h %}
+            <img alt="icone_categoria" class="menu-icon" src="{{category.img_h}}" />
+          {% endif %}
+          {{category.name | raw}}
+        </a>
+        <span class="sub-toggle"></span>
+        <div class="mega-menu">
+          <div class="mega-menu__column">
+            <h4>{{category.name|raw}}</h4>
+            <ul class="mega-menu__list">
+              {% for subcategory in category.subCategories %}
+                <li>
+                  <a href="{{subcategory.url}}">{{subcategory.name | raw}}</a>
+                  {% if subcategory.subCategories|length != 0 %}
+                    <ul class="mega-menu__list">
+                      <div class="menu_item_drop">
+                        {% for subsubcategory in subcategory.subCategories %}
+                          <li>
+                            <a href="{{subsubcategory.url}}">{{subsubcategory.name | raw}}</a>
+                          </li>
+                        {% endfor %}
+                      </div>
+                    </ul>
+                  {% endif %}
+                </li> 
+              {% endfor %}
+            </ul>
+          </div>
+        </div> #}
+      {% endif %}
+      {% endfor %}
+      {# </li> #}
+      {% set nextCategory  = categoryLimit - 1 %}
+      {% set categoryCount = 0 %}
+      {% for category in categories %}
+      {% set categoryCount = categoryCount + 1 %}
+      {% if (categoryCount > nextCategory) %}
+      <li class="menu-item-has-children has-mega-menu">
+        <a href="{{category.url}}">{{category.name | raw}}</a>                
+        {% if category.subCategories|length != 0 %}
+        <span class="sub-toggle"></span>
+        <i class="fal fa-chevron-right"></i>
+        </span>
+        <div class="mega-menu">
+          <div class="mega-menu__column">
+            <h4>{{category.name|raw}}</h4>
+            {% if category.subCategories|length != 0 %}
+              {% if category.subCategories|length > 48 %}
+                {% set columns = 5 %}
+                {% elseif category.subCategories|length > 36 %}
+                  {% set columns = 4 %}
+                  {% elseif category.subCategories|length > 24 %}
+                    {% set columns = 3 %}
+                    {% elseif category.subCategories|length >= 12 %}
+                    {% set columns = 2 %}
+                      {% else %}
+                      {% set columns = 1 %}
+            {% endif %}
+            <ul class="mega-menu__list">
+            {# <ul class="{{categoryPos}} {{ categoryMedia ? 'break-drop' : ''}} {{ (variables.cms_cabecalho.cms_menu_anim) ? 'menu-anim' : '' }}"> #}
+              {# <div class="menu_item_drop"> #}
+                {% for subcategory in category.subCategories %}
+                <li>
+                    <a href="{{subcategory.url}}">{{subcategory.name|raw}}</a>
+                </li>
+              {% endfor %}
+              {% endif %}
+              {# </div> #}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+      </li>
+      {% endif %}
+      {% endfor %}
+      {% if (categoryCount > categoryLimit) %}
+      {# <li class="menu-item-has-children has-mega-menu">
+        <span class="submenu-button"></span>
+        <a href>Outras Categorias</a>
+        <!-- OUTRAS CATEGORIAS-->
+        {% set otherColumns = (categoryCount - categoryLimit + 1) > 10 ? 2 : 1 %}
+        <div class="mega-menu">
+          <div class="mega-menu__column">
+            <h4>Outras Categorias</h4>
+            <ul class="drop-right {{ categoryMedia ? 'break-drop' : ''}} mega-menu__list">
+            <!-- <ul class="mega-menu__list"> -->
+              <div class="menu_item_drop col-{{otherColumns}}">
+                {% set nextCategory  = categoryLimit - 1 %}
+                {% set categoryCount = 0 %}
+                {% for category in categories %}
+                {% set categoryCount = categoryCount + 1 %}
+                {% if (categoryCount > nextCategory) %}
+                <li class="has-sub menu-subcategory">
+                  <a href="{{category.url}}">{{category.name | raw}}</a>                
+                  {% if category.subCategories|length != 0 %}
+                  <span class="submenu-button"></span>
+                  <span class="arrows-desk">
+                    <i class="fal fa-chevron-right"></i>
+                  </span>
+                  <ul>
+                    <div class="menu_item_drop">
+                      {% for subcategory in category.subCategories %}
+                      <li>
+                          <a href="{{subcategory.url}}">{{subcategory.name|raw}}</a>
+                      </li>
+                    {% endfor %}
+                    </div>
+                  </ul>
+                  {% endif %}
+                </li>
+                {% endif %}
+                {% endfor %}
+              </div> 
+            </ul>
+          </div>
+        </div>
+      <!-- FIM OUTRAS CATEGORIAS-->
+    </li> #}
+    {% endif %}
+</ul>
+{# FIM DE CÓDIGO ---------------------------------------------------- #}
