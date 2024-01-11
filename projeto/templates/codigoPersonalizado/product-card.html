@@ -1,0 +1,61 @@
+<div class="card-produto{% if not product.stock > 0 %} out-of-stock{% endif%}">
+  <img class="rectangle" src="{{ image_default.thumb_src }}" alt="{{ product.name|raw }}" />
+  <div class="frame">
+    <div class="r">R$ {{ product.price.sale }}</div>
+    <div class="text-wrapper">R$ {{ product.price.list }}</div>
+    <div class="div">-{{ discount }}% OFF</div>
+  </div>
+  <div class="text-wrapper-2"><a href="{{ product.url }}">{{ product.name|raw }}</a></div>
+  {% if secondary_image %}
+    <img class="material-symbols" src="{{ secondary_image.thumb_src }}"/>
+  {% endif %}
+  <div class="frame-2">
+    <div class="range">
+      <div class="rectangle-2" style="width: {{ product.stock }}0%;"></div>
+    </div>
+    <p class="dispon-veis">Disponíveis: <span>{{ product.stock }}</span></p>
+    <div class="quantity-container">
+      <label for="quantity">Quantidade:</label>
+      <div class="frame">
+      <button class="text-wrapper" id="menos">-</button>
+      <div class="div-wrapper">
+        <input type="number" id="quantity" name="quantity" min="0" value="1">
+      </div>
+      <button class="text-wrapper" id="mais">+</button>
+    </div>
+    <script>
+     let qtd = document.querySelector('#quantity');
+     let menos = document.querySelector('#menos');
+     let mais = document.querySelector('#mais');
+     menos.addEventListener('click', ()=>{
+      updateQuantity('-')
+     })
+     mais.addEventListener('click', ()=>{
+      updateQuantity('+')
+     })
+     function updateQuantity(sinal){
+      if(sinal === '-' && qtd.value > 0){
+       qtd.value = parseInt(qtd.value)-1;
+       return;
+      }
+      console.log(product.stock)
+      {% if product.stock > qtd %}
+       qtd.value = parseInt(qtd.value) + 1;
+      {% endif %}
+     }
+     menos.addEventListener('click',()=>{
+      if(qtd.value > 0){
+      }else{
+       return
+      }
+     })
+     mais.addEventListener('click', ()=>{
+      return;
+     })
+    </script>
+    </div>
+  </div>
+  <div class="product-card-action w-100">
+    <button class="btn btn-primary">Adicionar ao Carrinho</button>
+  </div>
+</div>

@@ -184,7 +184,7 @@ tel_sufixo %} {% if variables.cms_redes_sociais.cms_telefone_whats is not empty
     <b>{{ store.name | raw }}</b> - TODOS OS DIREITOS RESERVADOS.
     <br />CNPJ:
     {{store.cnpj}}, {{store.address|raw}}, CEP: {{store.postcode}}<br />PROIBIDA
-    A REPRODUÇÃO TOTAL OU PARCIAL. PREÇOS E ESTOQUE SUJEITOS A ALTERAÇÃO SEM
-    AVISO PRÉVIO.
+    A REPRODUÃ‡ÃƒO TOTAL OU PARCIAL. PREÃ‡OS E ESTOQUE SUJEITOS A ALTERAÃ‡ÃƒO SEM
+    AVISO PRÃ‰VIO.
   </div>
 </footer>

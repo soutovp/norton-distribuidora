@@ -7,7 +7,7 @@
    background: #333;
  }
  .foot-copyright {
-   background: var(--cor-bg-creditos);
+    background: linear-gradient(180deg, #333, #555);
    /*color: var(--cor-txt-creditos);*/
    color: #FFF;
  }
@@ -234,6 +234,15 @@
  .horario p{
   color: #FFF;
  }
+ .norton-redes{
+  padding: 10px
+ }
+ .norton-redes img{
+  width: 36px;
+ }
+ .norton-redes img[alt="Instagram"]{
+  width: 33px
+ }
  @media (max-width: 1200px){
    .norton-footer .section-categorias, .norton-footer .section-institucional{
      display: none;
@@ -274,9 +283,9 @@
 </style>
 {% if (section.id != "pages_content" or "lp" not in section.slug or variables.cms_rodape.cms_exibe_lp) %}
 {% if variables.cms_rodape.cms_bg_newsletter is not empty %}
-<!--Inclus?o da Newsletter-->
+{# <!--Inclus?o da Newsletter-->
 {% include 'snippets/newsletter.tpl' %}
-<!--Fim inclus?o-->
+<!--Fim inclus?o--> #}
 {% endif %}
 <footer class="norton-footer">
  <section class="section-sobre">
@@ -284,17 +293,17 @@
      <h3>Sobre a loja
      </h3>
      <hr>
-     <p>{{ variables.informacoes_loja.sobre_norton }}</p>
+     <p>Prezamos pelo respeito ao próximo sempre colocando a satisfação dos nossos clientes em primeiro lugar. Oferecemos produtos de qualidade e com preços justos.</p>
    </div>
    <div class="norton-footer-redes">
      <h3>Redes Sociais
      </h3>
      <hr>
-     <a href="#" class="norton-redes">
-       <img src="#" alt="Facebook">
+     <a href="https://www.facebook.com/norton.online/" class="norton-redes" target="_blank">
+       <img src="{{ variables.icones_loja.facebook_white }}" alt="Facebook">
      </a>
-     <a href="#" class="norton-redes">
-       <img src="#" alt="Instagram">
+     <a href="https://www.instagram.com/nortononlinee/" class="norton-redes" target="_blank">
+       <img src="{{ variables.icones_loja.instagram_white }}" alt="Instagram">
      </a>
    </div>
  </section>

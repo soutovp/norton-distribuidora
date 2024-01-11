@@ -177,12 +177,12 @@ body a:hover {
   border-radius: 3px;
   padding: 5px;
 }
-.template-cards:hover {
+/*.template-cards:hover {
   webkit-box-shadow: 0px 3px 10px -6px #000000, 0px 0px 5px 5px rgb(0 0 0 / 0%);
   box-shadow: 0px 3px 10px -6px #000000, 0px 0px 5px 5px rgb(0 0 0 / 0%);
-}
+}*/
 /*Fim template cards*/
-/*Página do Cliente*/
+/*Pï¿½gina do Cliente*/
 section.customer-account .panel-left ul.nav-menu li a>span,
 section.customer-account-overview .shipping-address,
 section.customer-account-overview div.event span.text,
@@ -190,7 +190,7 @@ section.customer-account-address .customer-address-list ul li .address,
 .customer-address-list ul li.new-address span, section.customer-account .box-shadow {
   color: #333;
 }
-/*Fim Página do cliente*/
+/*Fim Pï¿½gina do cliente*/
 /*CLOSE FANCY BOX*/
 .fancybox-slide--html .fancybox-close-small {
   background-color: var(--cor-bg-bt-cancel);

@@ -6,7 +6,8 @@
   {% include 'assets/buttons.css' %}
   {% include 'assets/collection_list.css' %}
   .header-content {
-    background-color: var(--cor-bg-reduzido);
+    /*background-color: var(--cor-bg-reduzido);*/
+    background-color: #333;
   }
   .safe-text {
     line-height: 12px;

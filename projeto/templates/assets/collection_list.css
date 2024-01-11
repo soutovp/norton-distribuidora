@@ -111,6 +111,9 @@
   text-decoration: none;
   color: #000;
 }
+.product-card{
+  background: transparent;
+}
 @media (max-width:400px) {
   .collection-header .collection-sort {
     flex-grow: 1;

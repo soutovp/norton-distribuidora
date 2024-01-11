@@ -99,7 +99,7 @@
     <div class="section-header search-header">
       <div class="header text-center">
         <h1>{{keywords|raw}}</h1>({{(paginate.records>1?'<b>'~paginate.records~'</b> produtos' : '<b>1</b> produto')|raw}})
-        {{ (other_keywords|length > 0 ? '<h2><div class="didyoumean">Você quis dizer: (<a class="hiperlink" href="/'~other_keywords|replace({' ':'+'})~'">'~other_keywords~'</a>)</div></h2>' : '')|raw }}
+        {{ (other_keywords|length > 0 ? '<h2><div class="didyoumean">VocÃª quis dizer: (<a class="hiperlink" href="/'~other_keywords|replace({' ':'+'})~'">'~other_keywords~'</a>)</div></h2>' : '')|raw }}
       </div>
     </div>
     <div class="content flex">
@@ -138,11 +138,11 @@
     <div class="texts">
       <div class="h1">Para obter melhores resultados em sua busca:
       </div>
-      <span class="text">Verifique se não houve erro de digitação.
+      <span class="text">Verifique se nÃ£o houve erro de digitaÃ§Ã£o.
       </span>
-      <span class="text">Procure utilizar sinônimos ao termo desejado.
+      <span class="text">Procure utilizar sinï¿½nimos ao termo desejado.
       </span>
-      <span class="text">Tente palavras menos especifícas e logo após use os filtros da busca.
+      <span class="text">Tente palavras menos especifÃ­cas e logo apps use os filtros da busca.
       </span>
     </div>
   </div>

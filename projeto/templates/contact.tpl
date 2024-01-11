@@ -69,7 +69,7 @@
       <div class="title-container">
         <h1 class="title">Fale Conosco
         </h1>
-        <h2>Se preferir, entre em contato através do {{ (store.telephone is not empty ? 'telefone <b>'~store.telephone~'</b> ou<br> por')|raw}} e-mail 
+        <h2>Se preferir, entre em contato atravï¿½s do {{ (store.telephone is not empty ? 'telefone <b>'~store.telephone~'</b> ou<br> por')|raw}} e-mail 
           <b>{{store.email_sac}}</b>.
         </h2>
       </div>
@@ -86,7 +86,7 @@
           </div>
           <div class="name">
             <b>{{product.name|raw}}</b>
-            {{product.sku ? ("<small>Referência: "~product.sku~"</small>")|raw : ""}}
+            {{product.sku ? ("<small>Referï¿½ncia: "~product.sku~"</small>")|raw : ""}}
           </div>
         </a>
       </fieldset>
@@ -143,7 +143,7 @@
             </div>
           </li>
           <li>
-            <label class="label">Informe o código de validação ao lado:
+            <label class="label">Informe o cÃ³digo de validaÃ§Ã£o ao lado:
             </label>
             <input type="text" class="input" name="code" size="20" maxlength="6" required="required">
           </li>

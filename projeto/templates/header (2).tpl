@@ -495,25 +495,25 @@
           <ul class="header__top-links">
             <li>
               <a href="#">
-                <img src="{{ variables.icones_loja.icone_chat }}" alt="Bal�o Fale Conosco">
+                <img src="{{ variables.icones_loja.icone_chat }}" alt="Balão Fale Conosco">
                 Fale Conosco
               </a>
             </li>
             <li>
               <a href="https://api.whatsapp.com/send?phone=55{{ variables.icones_loja.icone_whatsapp }}">
-                <img src="{{ variables.icones_loja.icone_whatsapp }}" alt="�cone do Whatsapp">
+                <img src="{{ variables.icones_loja.icone_whatsapp }}" alt="Ícone do Whatsapp">
                 <span>{{ tel_formatado }}</span>
               </a>
             </li>
             <li>
               <a href="tel:{{ variables.icones_loja.icone_telefone }}">
-                <img src="{{ variables.icones_loja.icone_telefone }}" alt="Icone do telefone">
+                <img src="{{ variables.icones_loja.icone_telefone }}" alt="Ícone do telefone">
                 <span>{{ fixo_formatado}}</span>
               </a>
             </li>
             <li>
-              Hor�rio de Atendimento: 
-              <span>Seg a sex de {{ variables.informacoes_loja.horario_inicio }} �s {{ variables.informacoes_loja.horario_final }}
+              Horário de Atendimento: 
+              <span>Seg a sex de {{ variables.informacoes_loja.horario_inicio }} às {{ variables.informacoes_loja.horario_final }}
               </span>
             </li>
           </ul>

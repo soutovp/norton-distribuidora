@@ -6,78 +6,156 @@
 {% endif%}
 {% set discount = (100 - ((product.price.sale / product.price.list)*100))|round %}
 {% if card_direction == "column" %}
-<div class="card-produto{% if not product.stock > 0 %} out-of-stock{% endif%}" style="flex-direction: column; position: relative; width: 200px; height: 450px; padding: 10px 15px; word-wrap: break-word;">
-  <img class="rectangle" src="{{ image_default.thumb_src }}" alt="{{ product.name|raw }}" style="width: 100%; height: auto;" />
-  <div class="frame" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; position: relative;">
-    <div class="r" style="width: 100%; margin-top: -1px; opacity: 0.56; font-family: 'Inter-Bold', Helvetica; font-weight: 700; color: #1fce03; font-size: 14px; letter-spacing: 0; line-height: normal; white-space: normal;">R$ {{ product.price.sale }}</div>
-    <div class="text-wrapper" style="width: 100%; color: #dadada; font-size: 12px; text-decoration: line-through; position: relative; font-family: 'Inter-Bold', Helvetica; font-weight: 700; letter-spacing: 0; line-height: normal; white-space: normal;">R$ {{ product.price.list }}</div>
-    <div class="div" style="width: 100%; margin-top: -1px; color: #ff0000; font-size: 14px; white-space: normal; position: relative; font-family: 'Inter-Bold', Helvetica; font-weight: 700; letter-spacing: 0; line-height: normal;">-{{ discount }}% OFF</div>
+<div class="storefront-cards collection-grid-card product-card position-relative template-cards h-100 flex{% if not product.stock > 0 %} out-of-stock{% endif%}" direction="column" justify-content="space-between" data-id="{{product.id}}">
+<style>
+  #product-card-quickview{
+    position: relative;
+    top: 5%;
+    left: 30%;
+  }
+  #button-quickview{
+    display: none;
+  }
+  .product-primary-img{
+    width: 250px;
+    height: 250px
+  }
+  .products-cards-item{
+    box-shadow: none;
+  }
+</style>  
+<div class="product-card-quickview position-absolute flex" id="product-card-quickview" direction="column" align-items="center" justify-content="center">
+    <a href="javascript:void(0)" onclick="closeFancybox();" data-fancybox data-type="ajax" id="button-quickview" class="button-quickview button-style-secondary btn btn-secondary flex" align-items="center" justify-content="center" data-src="{{url("product",{"pid":product.id,"quickview":true})}}">
+      <span>
+        <i class="fa-duotone fa-eye">
+        </i>
+      </span>
+    </a>
+    {% if product.price.count_down is defined %}
+      {% include 'product/snippets/count_down.tpl' %}
+    {% endif %}
   </div>
-  <div class="text-wrapper-2" style="width: 100%; font-family: 'Inter-Bold', Helvetica; font-weight: 700; color: #6ea8ff; font-size: 12px; letter-spacing: 0; line-height: normal; white-space: normal;"><a href="{{ product.url }}" style="color: var(--vermelhohighlight);">{{ product.name|raw }}</a></div>
-  {% if secondary_image %}
-    <img class="material-symbols" src="{{ secondary_image.thumb_src }}" style="width: 20px; height: auto;" />
+  {% if discount>0 and product.price.sale > 0%}
+  <div class="discount-chip position-absolute flex" wrap="true">
+    <span class="discount-value">-{{discount}}%
+    </span>
+  </div>
   {% endif %}
-  <div class="frame-2" style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 10px; position: relative;">
-    <div class="range" style="width: 100%; height: 10px; background-color: #d9d9d9; position: relative;">
-      <div class="rectangle-2" style="width: {{ product.stock }}0%; height: 10px; background-color: var(--vermelhohighlight); position: absolute;"></div>
-    </div>
-    <p class="dispon-veis" style="width: 100%; font-family: 'Inter-Bold', Helvetica; font-weight: 700; color: var(--variable-collection-text-dark); font-size: 12px; letter-spacing: 0; line-height: normal; white-space: normal;">Disponíveis: <span style="color: #000000;">{{ product.stock }}</span></p>
-    <div class="quantity-container" style="width: 100%; display: flex; align-items: center; gap: 10px;">
-      <label for="quantity" style="margin-right: 10px;">Quantidade:</label>
-      {#
-      <div style="display: flex; align-items: center;">
-        <button onclick="updateQuantity('-')" style="padding: 5px 10px; font-size: 12px;">-</button>
-        <input type="number" id="quantity" name="quantity" min="1" value="1" style="width: 40px; text-align: center;">
-        <button onclick="updateQuantity('+')" style="padding: 5px 10px; font-size: 12px;">+</button>
-      </div>
-      #}
-      <div class="frame">
-      <button class="text-wrapper" id="menos">-</button>
-      <div class="div-wrapper">
-        {#<input style="border: none;" id="quantidade" value="1">#}
-        <input type="number" id="quantity" name="quantity" min="0" value="1" style="width: 40px; text-align: center;">
-      </div>
-      <button class="text-wrapper" id="mais">+</button>
-    </div>
-    <script>
-     let qtd = document.querySelector('#quantity');
-     let menos = document.querySelector('#menos');
-     let mais = document.querySelector('#mais');
-     menos.addEventListener('click', ()=>{
-      updateQuantity('-')
-     })
-     mais.addEventListener('click', ()=>{
-      updateQuantity('+')
-     })
-     function updateQuantity(sinal){
-      if(sinal === '-' && qtd.value > 0){
-       qtd.value = parseInt(qtd.value)-1;
-       return;
-      }
-      // if(sinal === '+' && qtd.value >= {#{{ product.stock }}#}){
-      // qtd.value = parseInt(qtd.value)+1;
-      //}
-      console.log(product.stock)
-      {% if product.stock > qtd %}
-       qtd.value = parseInt(qtd.value) + 1;
+  <a href="{{product.url}}" title="{{product.name|raw}}" class="flex product-link w-100 position-relative" align-items="center" justify-space="between" direction="{{card_direction}}">
+    <figure class="flex product-card-thumbnail text-center w-100 position-relative" direction="column" align-items="center">
+      <img class="img-fluid product-primary-img" loading="lazy" data-element="product-image" data-subpath="{{product.id}}" data-file="{{image_default.filename}}" data-width="{{product.gallery.width}}" width="{{product.gallery.width}}" data-height="{{product.gallery.height}}" height="{{product.gallery.height}}" src="{{image_default.thumb_src}}"  alt="{{product.name|raw}}"/>
+      {% if secondary_image %}
+      <img class="img-fluid product-secondary-img position-absolute" loading="lazy" data-element="product-image" data-subpath="{{product.id}}" data-file="{{secondary_image.filename}}" data-width="{{product.gallery.width}}" width="{{product.gallery.width}}" data-height="{{product.gallery.height}}" height="{{product.gallery.height}}" src="{{secondary_image.thumb_src}}"  alt="{{product.name|raw}}"/>
       {% endif %}
-     }
-     menos.addEventListener('click',()=>{
-      if(qtd.value > 0){
-      }else{
-       return
-      }
-     })
-     mais.addEventListener('click', ()=>{
-      return;
-     })
-    </script>
+    </figure>
+  </a>
+  <div class="card-body flex" wrap="true" align-items="center">
+    {% if card_direction == "row" %}
+    <div class="list-only flex w-100">
+      <div class="product-card-title flex text-center" justify-content="center"> 
+        <a href="{{product.url}}">{{product.name|raw}}</a>
+      </div>
+      <div class="product-card-sku">{{product.sku}}</div>
+    </div>
+    {% else %}
+    <div class="product-card-title flex text-center grid-only w-100" justify-content="center">
+      <a href="{{product.url}}">{{product.name|raw}}</a>
+    </div>
+    {% endif %}
+    <div class="product-card-rating-buttons flex w-100" justify-content="center">
+      {% if product.rating %}
+      <div class="product-card-rating flex" direction="row" wrap="false" align-items="center" justify-content="center">
+        {% include 'snippets/collection/product-card-rating.tpl' %}
+      </div>
+      {% endif %}
+      {% if wishlist.status %}
+      <div class="wishlist flex" align-items="center">
+        <button data-pid="{{ product.id }}" type="button" class="btn-wishlist">
+          <i class="{{wishlist.icon}}"> 
+          </i>
+        </button>
+      </div>
+      {% endif %}
+      <a href="javascript:void(0)" onclick="closeFancybox();" data-fancybox data-type="ajax" 		class="quickview-mobile" align-items="center" justify-content="center" data-src="{{url("product",	{"pid":product.id,"quickview":true})}}">
+        <span>
+          <i class="fa-duotone fa-eye">
+          </i>
+        </span>
+      </a>
+    </div>
+    <ul class="product-card-marks position-absolute flex" direction="column">
+      {% if product.marks.new %}
+      <li class="mark-new text-center">
+        <span>{{ variables.cms_grade_produtos.cms_txt_lancamento |raw }}
+        </span>
+      </li>
+      {% endif %} {% if product.marks.hotdeal %}
+      <li class="mark-hotdeal text-center">
+        <span>{{ variables.cms_grade_produtos.cms_txt_oferta |raw }}
+        </span>
+      </li>
+      {% endif %} {% if product.marks.exclusive %}
+      <li class="mark-exclusive text-center">
+        <span>{{ variables.cms_grade_produtos.cms_txt_exclusivo |raw }}
+        </span>
+      </li>
+      {% endif %}
+    </ul>
+    <div class="product-card-information-add">
+      {% if product.free_shipping %}
+      <div class="mark-free-shipping">
+        <span>{{ variables.cms_grade_produtos.cms_txt_freeshipping |raw }}
+        </span>
+      </div>
+      {% endif %}
+      {% if product.immediate_delivery %} 
+      <div class="immediate-delivery">
+        <a href="javascript:void(0)" data-fancybox data-type="ajax" data-src="{{ goto.immediate_delivery }}">
+          <span>{{ variables.cms_grade_produtos.cms_txt_delivery |raw }}
+          </span>
+        </a>
+      </div>
+      {% endif %}
     </div>
   </div>
-  <div class="product-card-action w-100" style="margin-top: auto; padding-top: 10px;">
-    <button class="btn btn-primary">Adicionar ao Carrinho</button>
-  </div>
-</div>
-{% else %}
-{% include 'snippets/collection/category_card_list.tpl' %}
-{% endif %}
+  <div class="foot-card flex" direction="column" justify-content="center">
+    {% if not product.show_price %}
+    <div class="product-card-price-blocked flex" direction="row" wrap="false">
+      <div class="icon-block">
+        <i class="fas fa-lock fa-2x">
+        </i>
+      </div>
+      <div class="text">
+        <b>Faça Login/Cadastro</b>
+        <br>para ter acesso ao preço deste produto.
+      </div>
+    </div>
+    {% else %}
+    {# PREÇO DO PRODUTO ================================================= #}
+    <div class="product-card-price">
+      <div class="currentPrice" data-element="price">
+        {% include 'snippets/collection/product-card-price.tpl' %}
+      </div>
+    </div>
+    {# ================================================================== #}
+    {% endif %}
+    {% if product.stock > 0 and product.price.list > 0 %}
+      <div class="product-card-action w-100">
+        {{ include('snippets/collection/product-card-action.tpl', {actionType:cardType})}}
+      </div>
+      {% elseif product.price.list > 0 %}
+        <div class="chip out-of-stock text-center flex" align-items="center" justify-content="center">
+          <i class="fas fa-times-circle">
+          </i> Indisponível
+        </div>
+    {% endif %}
+    {# DISCONTO PROGRESSIVO ============================================= #}
+    {% if product.price.rules is defined %}
+      {% include 'product/snippets/progressive_discount.tpl' %}
+    {% endif %}
+    {# ================================================================== #}
+      </div>
+    </div>
+    {% else %}
+      {% include 'snippets/collection/category_card_list.tpl' %}
+    {% endif %}

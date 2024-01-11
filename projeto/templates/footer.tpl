@@ -7,7 +7,7 @@
     background: #333;
   }
   .foot-copyright {
-    background: var(--cor-bg-creditos);
+    background: linear-gradient(180deg, #333, #555);
     /*color: var(--cor-txt-creditos);*/
     color: #FFF;
   }
@@ -181,9 +181,11 @@
 <!--FIM-->
 {% if (section.id != "pages_content" or "lp" not in section.slug or variables.cms_rodape.cms_exibe_lp) %}
 {% if variables.cms_rodape.cms_bg_newsletter is not empty %}
-<!--Inclusão da Newsletter-->
+
+<!-- Inclusão da Newsletter -->
 {% include 'snippets/newsletter.tpl' %}
-<!--Fim inclusão-->
+
+<!-- Fim inclusão -->
 {% endif %}
 <footer class="foot">
   {{ banners.getByTag(['banner-duplo','and']) }}

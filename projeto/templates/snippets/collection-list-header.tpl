@@ -9,9 +9,9 @@
         <select name="sort" onchange="$('form#f-collection-sort').submit()">
             <option {{ paginate.sort == "" ? "selected" : "" }} disabled>Ordenar por</option>
             <option {{ paginate.sort == "maxdiscount" ? "selected" : "" }} value="maxdiscount">Maior desconto</option>
-            <option {{ paginate.sort == "pricelow" ? "selected" : "" }} value="pricelow">Menor Preço</option>
-            <option {{ paginate.sort == "pricemax" ? "selected" : "" }} value="pricemax">Maior Preço</option>
-            <option {{ paginate.sort == "new" ? "selected" : "" }} value="new">Lançamentos</option>
+            <option {{ paginate.sort == "pricelow" ? "selected" : "" }} value="pricelow">Menor PreÃ§o</option>
+            <option {{ paginate.sort == "pricemax" ? "selected" : "" }} value="pricemax">Maior PreÃ§o</option>
+            <option {{ paginate.sort == "new" ? "selected" : "" }} value="new">LanÃ§amentos</option>
             <option {{ paginate.sort == "bestsellers" ? "selected" : "" }} value="bestsellers">Mais vendidos</option>
             <option {{ paginate.sort == "name" ? "selected" : "" }} value="name">Nome do produto</option>
         </select>

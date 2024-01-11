@@ -347,6 +347,7 @@
      padding: 0 15px;
      width: fit-content;
      position: relative;
+     width: 100%;
    }
    #menu .menu_item_drop li a{
      color: #000;
