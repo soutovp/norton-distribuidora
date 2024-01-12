@@ -55,7 +55,7 @@
       <a href="{{product.url}}">{{product.name|raw}}</a>
     </div>
     {% endif %}
-    <div class="product-card-rating-buttons flex w-100" justify-content="center">
+    <div class="product-card-rating-buttons flex w-100">
       {% if product.rating %}
       <div class="product-card-rating flex" direction="row" wrap="false" align-items="center" justify-content="center">
         {% include 'snippets/collection/product-card-rating.tpl' %}

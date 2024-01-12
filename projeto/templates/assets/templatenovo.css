@@ -86,7 +86,7 @@
   }
   
   .header--standard .header__content-left {
-    max-width: 270px;
+    max-width: 400px;
     padding-right: 30px;
     display: flex;
     align-items: center;

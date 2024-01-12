@@ -517,13 +517,13 @@
               </a>
             </li>
             <li>
-              <a href="https://api.whatsapp.com/send?phone=55{{ variables.icones_loja.icone_whatsapp }}">
+              <a href="https://api.whatsapp.com/send?phone=55{{ variables.informacoes_loja.whatsapp }}" target="_blank">
                 <img src="{{ variables.icones_loja.icone_whatsapp }}" alt="Icone do Whatsapp">
                 <span>{{ tel_formatado }}</span>
               </a>
             </li>
             <li>
-              <a href="tel:{{ variables.icones_loja.icone_telefone }}">
+              <a href="tel:{{ variables.informacoes_loja.telefone }}">
                 <img src="{{ variables.icones_loja.icone_telefone }}" alt="Icone do telefone">
                 <span>{{ fixo_formatado}}</span>
               </a>
@@ -759,13 +759,13 @@
         Fale Conosco
        </li>
       </a>
-      <a href="https://api.whatsapp.com/send?phone=55{{variables.informacoes_loja.whatsapp}}">
+      <a href="https://api.whatsapp.com/send?phone=55{{ variables.informacoes_loja.whatsapp }}">
        <li>
         <img src="{{ variables.icones_loja.icone_whatsapp }}" alt="Ícone de Whatsapp">
         {{ tel_formatado }}
       </li>
       </a>
-      <a href="tel:{{ variables.icones_loja.icone_telefone }}">
+      <a href="tel:{{ variables.informacoes_loja.telefone }}">
        <li>
         <img src="{{ variables.icones_loja.icone_telefone }}" alt="Ícone de Telefone">
         {{fixo_formatado}}

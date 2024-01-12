@@ -183,7 +183,7 @@
     margin: 0 !important;
 }
 .product-card-price .currentPrice {
-    text-align: center;
+    text-align: left;
 }
 .product-card-action {
     -webkit-transition: all .35s ease;
@@ -194,9 +194,13 @@
 }
 .product-card-action .prod-quantity-cart {
     background: #ffffffe8;
-    padding: 5px;
-    margin-bottom: 5px;
-    height: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    border: 1px solid #555;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 .product-card-action .prod-quantity-cart input {
     background: none;
@@ -224,45 +228,53 @@
     gap: 10px;
 }
 .product-card-title a {
-    color: var(--cor-txt-nome-prto);
+    /*color: var(--cor-txt-nome-prto);*/
+    color: #000000;
     opacity: 0.9;
     margin-bottom: 5px;
-    font-size: 100%;
+    font-size: 18px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     line-height: 1.52947;
-    font-weight: 500;
+    font-weight: 600;
     /*min-height: 50px;*/
+    height: 60px;
 }
 .product-card-title a:hover {
     opacity: 1;
 }
 .stars {
     color: #ffb503;
+    /*font-size: 20px;*/
 }
 .stars.no-votes {
     color: var(--color-txt-60);
+    font-size: 20px;
 }
 .product-card-marks {
+    /*width: 100%;*/
+    height: auto;
     right: 0;
     gap: 5px;
     font-size: 80%;
-    top: 30px;
+    top: 40px;
 }
 .product-card-marks li {
     color: #fff;
-    font-size: 90%;
-    padding: 2px 5px;
-    opacity: 0.7;
+    font-size: 110%;
+    padding: 10px 20px;
+    /*opacity: 0.7;*/
 }
 .product-card-marks .mark-new {
-    background-color: var(--cor-bg-tag-lanc);
+    /*background-color: var(--cor-bg-tag-lanc);*/
+    background-color: #4567ff;
 }
 .product-card-marks .mark-hotdeal {
-    background-color: var(--cor-bg-tag-desc);
+    /*background-color: var(--cor-bg-tag-desc);*/
+    background-color: #DD1836;
 }
 .product-card-marks .mark-exclusive {
     background-color: var(--cor-bg-tag-exclus);
@@ -278,6 +290,7 @@
 .product-card-price .price {
     color: var(--cor-txt-prc-prto);
     font-size: 130%;
+    padding: 10px 0;
 }
 .product-card-price .installment-plan {
     color: var(--cor-txt-prc-prto);
@@ -298,11 +311,13 @@
 }
 .product-card-action button.btn {
     height: 3em;
-    background-color: #666;
+    background-color: #DD1836;
 }
 .product-card-rating-buttons {
     gap: 5px;
     margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 .product-card .wishlist .btn-wishlist {
     color: var(--color-txt-60);
@@ -332,7 +347,7 @@
     text-align: center;
 }
 .discount-chip {
-    font-size: 80%;
+    font-size: 130%;
     gap: 5px;
     right: 0px;
     z-index: 1;
@@ -341,7 +356,7 @@
 .discount-chip span {
     background-color: var(--cor-bg-tag-ofer, #61b32b);
     color: #fff;
-    padding: 2px;
+    padding: 5px;
     border-radius: 0 3px;
 }
 /*-- Fim vitrine --*/
@@ -416,13 +431,13 @@
     }
     div[data-items-mobile="2"] .product-card-title, .flex-mobile[width='6'] .product-card-title {
         font-size: 75%;
-        min-height: 30px;
+        height: 60px;
     }
     div[data-items-mobile="2"] .product-card-marks, .flex-mobile[width='6'] .product-card-marks {
         position: absolute;
         font-size: 55%;
         top: 10%;
-        left: 0;
+        right: 0;
         flex-direction: column !important;
         align-items: flex-start !important;
     }

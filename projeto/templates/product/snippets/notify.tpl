@@ -1,5 +1,5 @@
 <style>
-  /*==Produto indisponível==*/
+  /*==Produto indisponï¿½vel==*/
   .product-notify-availability button.btn-secondary {
     padding: 10px;
     border-radius: 3px;
@@ -14,7 +14,7 @@
   }
 </style>
 <div class="product-notify-availability{{ product.stock > 0 ? ' hide':'' }}" data-element="notify-availability">
-  <div class="title">Esse produto encontra-se indisponível.
+  <div class="title">Esse produto encontra-se indisponÃ­vel.
     <small>Deixe seu contato que avisaremos quando chegar.
     </small>
   </div>
@@ -33,7 +33,7 @@
     </li>
     <li class="newsletter">
       <input type="checkbox" name="newsletter" id="newsletter" value="1" class="campo_option" />
-      <label for="newsletter">Desejo receber e-mails com lançamentos e promoções.
+      <label for="newsletter">Desejo receber e-mails com lanÃ§amentos e promoÃ§Ãµes.
       </label>
     </li>
   </ul>

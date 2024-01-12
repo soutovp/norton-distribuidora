@@ -392,7 +392,7 @@
     justify-content: center;
   }
   #product-details div[data-type="individual"] ul.attributes-group li .prod-quantity-cart {
-    margin: 0;
+    margin-bottom: 10px;
     grid-row: 2;
   }
   @media (min-width: 900px) {
