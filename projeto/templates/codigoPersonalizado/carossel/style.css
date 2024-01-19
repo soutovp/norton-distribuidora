@@ -8,7 +8,6 @@
  height: 500px;
  align-items: center;
  gap: 50px;
- transition: .5s;
 }
 .norton-carrossel > div.norton-carrossel-esquerda{
  width: 60%;
@@ -36,7 +35,7 @@
  overflow: hidden;
  display: flex;
  flex-direction: row;
- 
+ transition: .5s;
 }
 #norton-carrossel-lista-um{
  overflow: hidden;
@@ -66,6 +65,8 @@
  overflow: hidden;
  display: flex;
  flex-direction: row;
+ transition: .5s;
+
 }
 @media (max-width: 1000px){
  .norton-carrossel{

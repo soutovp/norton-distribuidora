@@ -8,9 +8,13 @@ section.customer-account {
   color: #555;
 }
 .custom-container {
-  max-width: 1780px;
+  /*max-width: 1780px;*/
   margin: auto;
   padding: 0 0.9375rem;
+}
+.product-attributes .attributes-item.type-color label{
+  width: 25px;
+  height: 25px;
 }
 body *:not(path) {
   box-sizing: border-box;

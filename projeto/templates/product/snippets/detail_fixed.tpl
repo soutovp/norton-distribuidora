@@ -38,7 +38,7 @@
   /* Price-detail-fixed */
   .name-detail-fixed {
     color: var(--cor-txt-nome-prto);
-    font-size: 80%;
+    font-size: 1em;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -48,7 +48,7 @@
     max-width: 300px;
   }
   .price-detail-fixed .currentPrice {
-    font-size: 80%;
+    font-size: 50%;
   }
   .price-detail-fixed .currentPrice [data-element=sale-price].price {
     font-size: 160%;

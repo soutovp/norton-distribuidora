@@ -1,4 +1,4 @@
-{{ banners.getByTag(['produto','superior'],'and') }}
+{{ banners.getByTag(['produto','superior'],'and') }}tity-cart button.disabled
 <style>
   /*Descri��o lista*/
   .product-description-types .description_list h2 {

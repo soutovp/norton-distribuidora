@@ -1,4 +1,5 @@
-{% if variables.cms_grade_produtos.cms_botao_comprar is empty or product.attributes is defined or actionType == 'linked' %}
+{# CONDICIONAIS DA LINHA 2 :> or product.attributes is defined or actionType == 'linked' #}
+{% if variables.cms_grade_produtos.cms_botao_comprar is empty %}
 <a href="javascript:void(0)" onclick="closeFancybox();" title="{{product.name|raw}}" class="flex product-link h-100 w-100 position-relative" align-items="center" justify-space="between" direction="{{card_direction}}" data-fancybox data-type="ajax" data-src="{{product.url}}?quickview=true">
   {% if (product.quantity_select.status) %}
   <div class="empty-block">

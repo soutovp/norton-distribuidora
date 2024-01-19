@@ -311,7 +311,7 @@
 }
 .product-card-action button.btn {
     height: 3em;
-    background-color: #DD1836;
+    background-color: var(--cor-bg-bt-confirm);
 }
 .product-card-rating-buttons {
     gap: 5px;

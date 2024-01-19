@@ -10,7 +10,7 @@
       position: relative;
     }
     section.product-page div#product-progressive-discount ul#progressive-rules li#progressive-body>div, section.product-page div#product-progressive-discount ul#progressive-rules li#progressive-header>div {
-      border: 1px solid #eee;
+      /*order: 1px solid #eee;*/
       padding: 10px;
     }
     #progressive-header{
@@ -26,7 +26,8 @@
     }
     section.product-page div.product-progressive-discount div.title, #progressive-title {
       text-align: center;
-      background: #f9f9f9;
+      background: #0EC040;
+      color: #FFFFFF;
       padding: 10px;
       margin: 0;
     }
@@ -64,6 +65,9 @@
       position: absolute;
       right: 0;
     }
+    .norton-value-progressive{
+      color: #0EC040;
+    }
     @media (max-width: 1250px) {
       section.product-page div.product-progressive-discount, #product-progressive-discount {
         max-width: 70%;
@@ -88,7 +92,7 @@
       {% for rule in product.price.rules %}
       <li class="body" id="progressive-body">
         <div class="quantity">{{ (rule.max==0 ? ("acima de %s unidades"|format(rule.min)) : ("%s até %s unidades"|format(rule.min,rule.max)))|raw}}</div>
-        <div class="value">{{currency.format(rule.value)}} / un.</div>
+        <div class="value norton-value-progressive">{{currency.format(rule.value)}} / un.</div>
         <div class="percentage-discount" id="percentage-discount">{{ (rule.discount>0) ? ("<span>-"~rule.discount~"%</span>")|raw : ""}}</div>
       </li>
       {% endfor %}

@@ -6,7 +6,7 @@
 {% endif%}
 {% set discount = (100 - ((product.price.sale / product.price.list)*100))|round %}
 {% if card_direction == "column" %}
-<div class="storefront-cards collection-grid-card product-card position-relative template-cards h-100 flex{% if not product.stock > 0 %} out-of-stock{% endif%}" direction="column" justify-content="space-between" data-id="{{product.id}}">
+<div class="storefront-cards collection-grid-card product-card position-relative template-cards flex{% if not product.stock > 0 %} out-of-stock{% endif%}" direction="column" justify-content="space-between" data-id="{{product.id}}">
 <style>
   #product-card-quickview{
     position: relative;
@@ -141,12 +141,12 @@
           <i class="fas fa-times-circle">
           </i> Indisponível
         </div>
-    {% endif %}
-    {# DISCONTO PROGRESSIVO ============================================= #}
-    {% if product.price.rules is defined %}
-      {% include 'product/snippets/progressive_discount.tpl' %}
-    {% endif %}
-    {# ================================================================== #}
+        {% endif %}
+        {# DISCONTO PROGRESSIVO ============================================= #}
+        {% if product.price.rules is defined %}
+          {% include 'product/snippets/progressive_discount.tpl' %}
+        {% endif %}
+        {# ================================================================== #}
       </div>
     </div>
     {% else %}

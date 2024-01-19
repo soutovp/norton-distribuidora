@@ -35,9 +35,9 @@
     }
     input.star-1:checked ~ label.star { color: #F62; }
     input.star-2:checked ~ label.star { color: #ffae23; }
-    input.star-5:checked ~ label.star { color: #FE7; }
+    input.star-5:checked ~ label.star { color: #ffae23; }
 
-    label.star:hover,label.star:hover ~ label.star { color: #ffae23;  }
+    label.star:hover,label.star:hover ~ label.star { color: #FE7;  }
 
     @media only screen and (max-width:600px) {
         section.product-review .form-btn.group button { margin-bottom: 10px; order:1; }
@@ -62,7 +62,7 @@
                 </ul>
             </fieldset>
             <fieldset class="form-fields-group">
-                <legend><span>Sua avaliação</span></legend>
+                <legend><span>Sua avaliaÃ§Ã£o</span></legend>
                 <ul>
                     <li class="rating">
 
@@ -75,14 +75,14 @@
                 </ul>
                 <ul class="fields">
                     <li>
-                        <label for="title">Título do comentário:</label>
-                        <input type="text" name="title" id="title" class="validate[required,minSize[3]]" placeholder="Ex. ótimo custo/benefício" />
+                        <label for="title">TÃ­tulo do comentÃ¡rio:</label>
+                        <input type="text" name="title" id="title" class="validate[required,minSize[3]]" placeholder="Ex. Ã³timo custo/benefÃ­cio" />
                     </li>
                 </ul>
                 <ul class="fields">
                     <li>
-                        <label for="comment">Descreva seu comentário (opcional):</label>
-                        <textarea  name="comment" id="comment" rows="10" placeholder="Descreva a sua avaliação sobre este produto."></textarea>
+                        <label for="comment">Descreva seu comentÃ¡rio (opcional):</label>
+                        <textarea  name="comment" id="comment" rows="10" placeholder="Descreva a sua avaliaÃ§Ã£o sobre este produto."></textarea>
                     </li>
                 </ul>
                 <ul class="fields validate-code">
@@ -91,14 +91,14 @@
                         <div class="refresh"><a tabindex="-1" href="javascript:void(0);" title="Trocar imagem" onclick="$('#image').attr('src','{{ url("current",{"img":1,"v":date|date("U")}) }}');return false"><i class="fas fa-sync-alt"></i> Trocar Imagem</a></div>
                     </li>
                     <li>
-                        <label class="label">Informe o código de validação ao lado:</label>
+                        <label class="label">Informe o cÃ³digo de validaÃ§Ã£o ao lado:</label>
                         <input type="text" class="input" name="code" size="20" maxlength="6" required="required">
                     </li>
                 </ul>
             </fieldset>
             <div class="form-btn group">
                 <button type="button" name="btn-cancel" id="btn-cancel" class="cancel" onclick="$.fancybox.close();"><span>Cancelar</span></button>
-                <button type="submit" name="btn-submit" id="btn-submit" class="button-style-primary btn btn-primary"><i class="fas fa-check"></i> <span>Confirmar avaliação</span></button>
+                <button type="submit" name="btn-submit" id="btn-submit" class="button-style-primary btn btn-primary"><i class="fas fa-check"></i> <span>Confirmar avaliaÃ§Ã£o</span></button>
             </div>
         </div>
     </form>

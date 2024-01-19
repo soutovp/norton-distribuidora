@@ -338,10 +338,10 @@
     }
     /*
     .header-logo img {
-      max-width: 100px;
-      height: auto;
-      margin-left: 1px;
-    }
+    max-width: 100px;
+    height: auto;
+    margin-left: 1px;
+  }
     */
     .header-user-area ul {
       font-size: 100%;
@@ -406,7 +406,7 @@
   }
   /*
   .header-body.fixed .header-logo img{
-    max-height: 36px;
+  max-height: 36px;
   }
   */
   .header-body.fixed .header-navigation-list{
@@ -565,10 +565,32 @@
         </style>
         <div class="header__content-right">
           <div class="header__actions">
+            <style>
+              .norton-atendimento{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+              }
+              .norton-atendimento > p{
+                color: #FFFFFF;
+                font-weight: 700;
+              }
+            </style>
+            <a href="/atendimento/">
+              <div class="norton-atendimento">
+                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.74 30.731L16 29.731L20 22.731H26C26.5304 22.731 27.0391 22.5202 27.4142 22.1452C27.7893 21.7701 28 21.2614 28 20.731V8.73096C28 8.20052 27.7893 7.69182 27.4142 7.31674C27.0391 6.94167 26.5304 6.73096 26 6.73096H6C5.46957 6.73096 4.96086 6.94167 4.58579 7.31674C4.21071 7.69182 4 8.20052 4 8.73096V20.731C4 21.2614 4.21071 21.7701 4.58579 22.1452C4.96086 22.5202 5.46957 22.731 6 22.731H15V24.731H6C4.93913 24.731 3.92172 24.3095 3.17157 23.5594C2.42143 22.8092 2 21.7918 2 20.731V8.73096C2 7.67009 2.42143 6.65268 3.17157 5.90253C3.92172 5.15238 4.93913 4.73096 6 4.73096H26C27.0609 4.73096 28.0783 5.15238 28.8284 5.90253C29.5786 6.65268 30 7.67009 30 8.73096V20.731C30 21.7918 29.5786 22.8092 28.8284 23.5594C28.0783 24.3095 27.0609 24.731 26 24.731H21.16L17.74 30.731Z" fill="white"/>
+                  <path d="M8 10.731H24V12.731H8V10.731ZM8 16.731H18V18.731H8V16.731Z" fill="white"/>
+                </svg>
+                <p>Atendimento</p>
+              </div>
+            </a>
             <a class="header__extra" href="#">
               <!--<img src="{#{{ variables.icones_loja.coracao }}#}" alt="Ícone de coração, like.">-->
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
-                <path class="icons_hover_stoke" fill="{{icons_color|raw}}" d="M178 28c-20.09 0-37.92 7.93-50 21.56C115.92 35.93 98.09 28 78 28a66.08 66.08 0 0 0-66 66c0 72.34 105.81 130.14 110.31 132.57a12 12 0 0 0 11.38 0C138.19 224.14 244 166.34 244 94a66.08 66.08 0 0 0-66-66m-5.49 142.36a328.69 328.69 0 0 1-44.51 31.8a328.69 328.69 0 0 1-44.51-31.8C61.82 151.77 36 123.42 36 94a42 42 0 0 1 42-42c17.8 0 32.7 9.4 38.89 24.54a12 12 0 0 0 22.22 0C145.3 61.4 160.2 52 178 52a42 42 0 0 1 42 42c0 29.42-25.82 57.77-47.49 76.36"/></svg>
+                <path class="icons_hover_stoke" fill="{{icons_color|raw}}" d="M178 28c-20.09 0-37.92 7.93-50 21.56C115.92 35.93 98.09 28 78 28a66.08 66.08 0 0 0-66 66c0 72.34 105.81 130.14 110.31 132.57a12 12 0 0 0 11.38 0C138.19 224.14 244 166.34 244 94a66.08 66.08 0 0 0-66-66m-5.49 142.36a328.69 328.69 0 0 1-44.51 31.8a328.69 328.69 0 0 1-44.51-31.8C61.82 151.77 36 123.42 36 94a42 42 0 0 1 42-42c17.8 0 32.7 9.4 38.89 24.54a12 12 0 0 0 22.22 0C145.3 61.4 160.2 52 178 52a42 42 0 0 1 42 42c0 29.42-25.82 57.77-47.49 76.36"/>
+              </svg>
               <span>
                 <i>0</i>
               </span>
@@ -579,7 +601,11 @@
             <div class="ps-block--user-header">
               <div class="ps-block__left">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icons_hover_stroke" width="36" height="36" viewBox="0 0 24 24">
-                  <g class="icons_hover_stroke" fill="none" stroke="{{icons_color|raw}}" stroke-width="2.5"><path stroke-linejoin="round" d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><circle cx="12" cy="7" r="3"/></g></svg>
+                  <g class="icons_hover_stroke" fill="none" stroke="{{icons_color|raw}}" stroke-width="2.5">
+                    <path stroke-linejoin="round" d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
+                    <circle cx="12" cy="7" r="3"/>
+                  </g>
+                </svg>
                 <!--<img src="{{ variables.icones_loja.perfil }}" alt="Ícone de Perfil"> -->
               </div>
               <div class="ps-block__right">
@@ -613,76 +639,76 @@
   <style>
     /* HEADER TOP --------------------*/
     .header___top{
-     background-color: #5B5B5B;
-     color: #FFF;
+      background-color: #5B5B5B;
+      color: #FFF;
     }
     .header___top ul{
-     margin: 0;
-     padding: 0;
-     list-style: none;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
     .header___top li{
-     display: flex;
-     align-items: center;
-     gap: 5px;
-     padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 10px;
     }
     .header___top a{
-     color: #FFF;
-     text-decoration: none;
+      color: #FFF;
+      text-decoration: none;
     }
     /* MENU --------------------*/
     .header__menu{
-     background-color: #333;
-     color: #FFF;
+      background-color: #333;
+      color: #FFF;
     }
     .header__menu{
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     padding: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px;
     }
     #logoNorton{
-     width: 150px;
+      width: 150px;
     }
     .menu_hamburger{
-     margin: auto 0;
+      margin: auto 0;
     }
     .header__menu div.hamburger{
-     width: 25px;
-     height: 2px;
-     background-color: #FFF;
-     border-radius: 1px;
-     margin: 14px 0;
+      width: 25px;
+      height: 2px;
+      background-color: #FFF;
+      border-radius: 1px;
+      margin: 14px 0;
     }
     .header__menu div.hamburger::before{
-     display: block;
-     content: "";
-     position: relative;
-     top: -8px;
-     width: 25px;
-     height: 2px;
-     background-color: #FFF;
-     border-radius: 1px;
+      display: block;
+      content: "";
+      position: relative;
+      top: -8px;
+      width: 25px;
+      height: 2px;
+      background-color: #FFF;
+      border-radius: 1px;
     }
     .header__menu div.hamburger::after{
-     display: block;
-     content: "";
-     position: relative;
-     top: 6px;
-     width: 25px;
-     height: 2px;
-     background-color: #FFF;
-     border-radius: 1px;
+      display: block;
+      content: "";
+      position: relative;
+      top: 6px;
+      width: 25px;
+      height: 2px;
+      background-color: #FFF;
+      border-radius: 1px;
     }
     #button_hamburger{
-     background: none;
-     color: transparent;
-     border: none;
+      background: none;
+      color: transparent;
+      border: none;
     }
     #__menu{
-     transition: .5s ease-in-out;
-     z-index: 999;
+      transition: .5s ease-in-out;
+      z-index: 999;
     }
     #__menu-close{
       /*transition: .5s;*/
@@ -698,33 +724,33 @@
       .header__menu{
         padding: 0 20%;
       }
-     .header___top ul{
-      font-size: x-small;
-     }
-     .header___top li > img{
-      width: 24px;
-     }
-     .header___top ul{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-     }
-     .header___top > div{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 5px
-     }
-     .header___top > div > p{
-      color: #FFF;
-     }
-     #__menu{
-      position: fixed;
-      top: 0;
-      height: 100vh;
-      width: 80vw;
-      background: #FFF;
-     }
+      .header___top ul{
+        font-size: x-small;
+      }
+      .header___top li > img{
+        width: 24px;
+      }
+      .header___top ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .header___top > div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 5px
+      }
+      .header___top > div > p{
+        color: #FFF;
+      }
+      #__menu{
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        width: 80vw;
+        background: #FFF;
+      }
     }
     @media (max-width: 425px){
       .header__menu{
@@ -732,95 +758,102 @@
       }
     }
     @media (max-width: 370px){
-     .header___top > div > p{
-      font-size: 10px;
-      color: #FFF;
-     }
-     .header___top li{
-      gap: 2.5px;
-      padding: 5px;
-     }
-     .header___top li > img{
-      width: 16px;
-     }
-     
+      .header___top > div > p{
+        font-size: 10px;
+        color: #FFF;
+      }
+      .header___top li{
+        gap: 2.5px;
+        padding: 5px;
+      }
+      .header___top li > img{
+        width: 16px;
+      }
     }
-   </style>
-    <!-- HEADER TOP =============================================== -->
+  </style>
+  <!-- HEADER TOP =============================================== -->
   <div class="header___top">
     <div>
-     <p>Horário de Atendimento - Seg a sex de {{ variables.informacoes_loja.horario_inicio }} ás {{ variables.informacoes_loja.horario_final }}</p>
+      <p>Horário de Atendimento - Seg a sex de {{ variables.informacoes_loja.horario_inicio }} ás {{ variables.informacoes_loja.horario_final }}</p>
     </div>
     <div>
-     <ul>
-      <a href="#">
-       <li>
-        <img src="{{ variables.icones_loja.icone_chat }}" alt="Chat">
-        Fale Conosco
-       </li>
-      </a>
-      <a href="https://api.whatsapp.com/send?phone=55{{ variables.informacoes_loja.whatsapp }}">
-       <li>
-        <img src="{{ variables.icones_loja.icone_whatsapp }}" alt="Ícone de Whatsapp">
-        {{ tel_formatado }}
-      </li>
-      </a>
-      <a href="tel:{{ variables.informacoes_loja.telefone }}">
-       <li>
-        <img src="{{ variables.icones_loja.icone_telefone }}" alt="Ícone de Telefone">
-        {{fixo_formatado}}
-      </li>
-      </a>
-     </ul>
+      <ul>
+        <a href="#">
+          <li>
+            <img src="{{ variables.icones_loja.icone_chat }}" alt="Chat">
+            Fale Conosco
+          </li>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=55{{ variables.informacoes_loja.whatsapp }}">
+          <li>
+            <img src="{{ variables.icones_loja.icone_whatsapp }}" alt="Ícone de Whatsapp">
+            {{ tel_formatado }}
+          </li>
+        </a>
+        <a href="tel:{{ variables.informacoes_loja.telefone }}">
+          <li>
+            <img src="{{ variables.icones_loja.icone_telefone }}" alt="Ícone de Telefone">
+            {{fixo_formatado}}
+          </li>
+        </a>
+      </ul>
     </div>
-   </div>
-   <!-- MENU OPEN / CLOSE ======================================== -->
-   <div id="__menu" style="transform: translateX(-100%);">
+  </div>
+  <!-- MENU OPEN / CLOSE ======================================== -->
+  <div id="__menu" style="transform: translateX(-100%);">
     {% include 'snippets/menu_header_mobile.tpl' %}
-   </div>
-   <div id="__menu-close" style="display: none; "></div>
-   <!-- HEADER MENU ============================================== -->
-   <div class="header__menu">
+  </div>
+  <div id="__menu-close" style="display: none; ">
+  </div>
+  <!-- HEADER MENU ============================================== -->
+  <div class="header__menu">
     <div class="menu_hamburger">
-     <button id="button_hamburger" onClick="">
-      <div class="hamburger"></div>
-     </button>
+      <button id="button_hamburger" onClick="">
+        <div class="hamburger">
+        </div>
+      </button>
     </div>
     <div class="menu__logo">
       <a href="/index.php">
         <img id="logoNorton" src="{{images.logo}}" alt="Logo Norton Distribuidora">
       </a>
     </div>
-   </div>
-   <!-- END -->
-  </header>
-  <script>
-   let __menu = document.getElementById('__menu');
-   let button_hamburger = document.getElementById('button_hamburger');
-   let __menuClose = document.getElementById('__menu-close');
-   __menuClose.addEventListener('click', ()=>{
-    console.log('Clicado!');
-     __menu.style.transform == 'translateX(-100%)' ? __menu.style.transform = 'translateX(0)' : __menu.style.transform = 'translateX(-100%)';
-     if(__menuClose.style.display === 'block'){
-      __menuClose.style.display = 'none'
-     }else{
-       setTimeout(()=>{
-        __menuClose.style.display == 'none' ? __menuClose.style.display = 'block' : __menuClose.style.display = 'none';
-       }, 500);
-     }
-   });
-   button_hamburger.addEventListener('click', ()=>{
+  </div>
+  <!-- END -->
+</header>
+<script>
+  let __menu = document.getElementById('__menu');
+  let button_hamburger = document.getElementById('button_hamburger');
+  let __menuClose = document.getElementById('__menu-close');
+  __menuClose.addEventListener('click', ()=>{
     console.log('Clicado!');
     __menu.style.transform == 'translateX(-100%)' ? __menu.style.transform = 'translateX(0)' : __menu.style.transform = 'translateX(-100%)';
     if(__menuClose.style.display === 'block'){
       __menuClose.style.display = 'none'
-     }else{
-       setTimeout(()=>{
+    }
+    else{
+      setTimeout(()=>{
         __menuClose.style.display == 'none' ? __menuClose.style.display = 'block' : __menuClose.style.display = 'none';
-       }, 500);
-     }
-   });
-  </script>
+      }
+                 , 500);
+    }
+  }
+                              );
+  button_hamburger.addEventListener('click', ()=>{
+    console.log('Clicado!');
+    __menu.style.transform == 'translateX(-100%)' ? __menu.style.transform = 'translateX(0)' : __menu.style.transform = 'translateX(-100%)';
+    if(__menuClose.style.display === 'block'){
+      __menuClose.style.display = 'none'
+    }
+    else{
+      setTimeout(()=>{
+        __menuClose.style.display == 'none' ? __menuClose.style.display = 'block' : __menuClose.style.display = 'none';
+      }
+                 , 500);
+    }
+  }
+                                   );
+</script>
 {# FIM HEADER MOBILE --------------------------------------------------------------------- #}
 {% if section.id == "home" %}
 {% if variables.cms_cabecalho.cms_transp_header is not empty %}  

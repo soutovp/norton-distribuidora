@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+body{
+ margin: 0;
+ padding: 0;
+}
+.atendimento{
+ font-family: 'Roboto', sans-serif;
+}
+/* HEADER ------------------------------------------------------ */
+.atendimento-header{
+ text-align: center;
+ color: #FFF;
+ background: linear-gradient(#DE0000, #FF5B5B, #FF7575);
+ padding: 50px 0;
+}
+.atendimento-header h1{
+ font-weight: 900;
+ margin: 0;
+ font-size: 200%;
+}
+.atendimento-header h1 > strong{
+ font-weight: 500;
+}
+.atendimento-header > p{
+ font-size: 150%;
+ color: #333;
+ font-weight: 500;
+}
+
+
+/* SECTION ------------------------------------------------------ */
+
+.atendimento-main{
+ display: flex;
+ justify-content: center;
+}
+.atendimento-card{
+ background-color: #FBFBFB;
+ border: 1px solid #333;
+ border-radius: 5px;
+ box-shadow: 5px 5px 5px rgba(0,0,0,.1);
+ display: flex;
+ flex-direction: column;
+ padding: 15px 0;
+ color: #333;
+ width: 300px;
+}
+
+/* MAIN --------------------------------------------------- */
+
+div.atendimento-box{
+ display: flex;
+ flex-direction: row;
+ gap: 25px;
+}
+
+/* CARD --------------------------------------------------- */
+.atendimento-card >  svg{
+ margin: 0 auto;
+}
+.atendimento-card h3{
+ text-transform: uppercase;
+ text-align: center;
+ color: #FF0000;
+ font-size: 130%;
+ font-weight: 900;
+}
+.atendimento-card a{
+ text-decoration: none;
+ color: #333;
+}
+/* CARD VENDA --------------------------------------------------- */
+.atendimento-card.atendimento-venda h4{
+ margin: 0;
+ color: #FF0000;
+}
+.atendimento-venda-televenda{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ text-align: center;
+ margin: 50px 0;
+}
+.atendimento-venda-televenda > p{
+ text-align: center;
+ padding: 0 10px;
+}
+.atendimento-venda-televenda a > div{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ gap: 15px;
+ margin-top: 20px;
+}
+.atendimento-venda-whatsapp{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+.atendimento-venda-whatsapp > p{
+ text-align: center;
+ margin: 0;
+}
+.atendimento-venda-whatsapp a > div{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ justify-content: center;
+ gap: 15px;
+}
+
+
+/* CARD SAC --------------------------------------------------- */
+.atendimento-sac-contatos{
+ display: flex;
+ justify-content: center;
+}
+.atendimento-sac-contatos ul{
+ list-style: none;
+ display: flex;
+ flex-direction: column;
+ width: fit-content;
+ justify-self: center;
+ padding: 0;
+}
+.atendimento-sac-contatos ul li{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ gap: 15px;
+ padding: 10px;
+}
+/* .atendimento-card-sac hr{
+ width: 90%;
+ 
+} */
+.atendimento-sac-desc{
+ padding: 15px;
+ text-align: center;
+}
+
+/* CARD CORPORATIVO --------------------------------------------------- */
+
+.atendimento-corporativo-contatos{
+ display: flex;
+ justify-content: center;
+}
+.atendimento-corporativo-contatos ul{
+ list-style: none;
+ display: flex;
+ flex-direction: column;
+ width: fit-content;
+ justify-self: center;
+ padding: 0;
+}
+.atendimento-corporativo-contatos ul li{
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ gap: 15px;
+ padding: 10px;
+}
+.atendimento-corporativo-trabalheconosco h4,
+.atendimento-corporativo-trabalheconosco p{
+ margin: 0;
+ padding: 0;
+}
+.atendimento-corporativo-trabalheconosco h4{
+ color: red;
+}
+.atendimento-corporativo-trabalheconosco{
+ text-align: center;
+ width: 90%;
+ margin: 0 auto;
+}
+.atendimento-corporativo-trabalheconosco p{
+ text-align: start;
+}
+.atendimento-corporativo-trabalheconosco > div{
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 15px;
+justify-content: center;
+margin-top: 30px;
+}
+.atendimento-corporativo-trabalheconosco > div a{
+font-weight: 700;
+}
+
+.atendimento-main section > p{
+ text-align: center;
+ font-size: 14px;
+}
