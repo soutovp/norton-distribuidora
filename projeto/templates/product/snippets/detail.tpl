@@ -155,11 +155,12 @@
   }
   /*--INFO PRODUTO--*/
   .header-title h1 {
-    font-size: 400%;
+    font-size: 250%;
     margin-bottom: 5px;
     line-height: 1.125;
-    font-weight: 600;
+    font-weight: 300;
     letter-spacing: .004em;
+    text-transform: capitalize;
   }
   .header-title p {
     font-size: 85%;
@@ -168,9 +169,22 @@
     letter-spacing: .009em;
   }
   section.product-page .currentPrice {
-    max-width: 500px;
+    max-width: 100%;
     text-align: left;
-    display: flex;
+    display: block;
+    /* flex-direction: column; */
+    /* align-items: flex-start; */
+  }
+  section.product-page .currentPrice > .installment-plan > b{
+    color: red;
+    font-weight: 900;
+  }
+  section.product-page .currentPrice > .installment-plan > b:first-of-type{
+    font-size: 5em;
+    display: block;
+  }
+  section.product-page .currentPrice > .installment-plan > b:nth-of-type(2){
+    font-size: 2.5em;
   }
   .product-details-content .procuct-detail .header-title {
     gap: 10px;
@@ -280,10 +294,10 @@
     grid-row: 2;
   }
   .prod-quantity-cart button.disabled{
-    color: lightblue;
+    color: #999;
   }
   .prod-quantity-cart{
-    border: 1px solid blue;
+    border: 1px solid black;
   }
   @media (max-width: 1450px){
     .header-title h1{
@@ -298,6 +312,9 @@
   @media (max-width: 768px) {
     .header-title h1{
       font-size: 150%;
+    }
+    section.product-page .currentPrice > .installment-plan > b:first-of-type{
+      display:block;
     }
     #product-details div[data-type="individual"] ul.attributes-group {
       grid-template-columns: 1fr 1fr 1fr;
@@ -366,8 +383,10 @@
     margin-bottom: 0;
   }
   #product-details .product-values .currentPrice .price {
-    font-size: 5em;
-    color: #FF0000;
+    font-size: 2rem;
+    color: #888888;
+    opacity: .7;
+    font-weight: 500;
   }
   #product-details .product-values .currentPrice .price.slash {
     opacity: 0.7;
@@ -383,6 +402,7 @@
     font-size: 0.875em;
     color: var(--cor-txt-prc-prto, #000);
     opacity: 0.8;
+    display: block;
   }
   .product-buttons-action .prod-quantity-cart, .product-buttons-action .btn.btn-primary, .product-buttons-action .wishlist {
     height: 40px;
@@ -390,14 +410,14 @@
   }
   .prod-quantity-cart button {
     font-size: 0.875em;
-    /*color: var(--color-txt-80);*/
-    color: blue;
+    color: var(--color-txt-80);
+    /*color: blue;*/
   }
   .prod-quantity-cart input {
     border: none;
     font-weight: 400;
     width: 50px;
-    color: blue;
+    color: black;
   }
   .product-buttons-action .wishlist {
     padding: 5px;
@@ -419,7 +439,7 @@
   */
   #form-shipping {
     max-width: 180px;
-    border: 1px solid blue;
+    border: 1px solid #e5e5e5;
     border-radius: 3px;
     margin-top: 0;
     padding: 15px 5px;
@@ -428,7 +448,7 @@
     padding: 10px;
     cursor: pointer;
     right: 0;
-    color: blue;
+    color: black;
   }
   #button-submit-cep:hover {
     color: #333;
@@ -438,7 +458,7 @@
     width: 100%;
     height: 100%;
     padding: 10px;
-    color: blue;
+    color: black;
   }
   .additional-buttons button.btn-secondary {
     background-color: transparent;
@@ -599,6 +619,9 @@
     }
   }
   @media (max-width: 600px) {
+    .action-button-buy{
+      flex-direction: column
+    }
     .procuct-detail .product-buttons-action .prod-quantity-cart {
       width: 100%;
       justify-content: center;
@@ -638,7 +661,7 @@
               <div class="swiper-slide">
                 {{ image.thumb|raw }}
                 <link itemprop="image" href="{{ image.source }}" />
-                <img alt="{{ product.name|raw }}" title="{{ product.name|raw }}" src="{{ image.source }}">
+                <img alt="{{ product.name|raw|lower }}" title="{{ product.name|raw }}" src="{{ image.source }}">
               </div>
               {% endfor %}
               {% if product.videos %}
@@ -716,7 +739,11 @@
       </div>
       <div class="procuct-detail flex" width="6" direction="column" column="padding">
         <div class="header-title flex" direction="column">
-          <h1 itemprop="name">{{ product.name|raw }}</h1>
+          <h1 id="titulo-produto-norton" itemprop="name">{{ product.name|raw }}</h1>
+          <script>
+            const produto_norton = document.getElementById('titulo-produto-norton').innerText;
+            document.getElementById('titulo-produto-norton').innerText = produto_norton.toLowerCase();
+          </script>
           {% if product.description_small %}
           <p>{{ product.description_small|raw }}</p>
           {% endif %}
@@ -881,12 +908,12 @@
         {% include 'product/snippets/kit.tpl' %}
         {% endif %}
         {% if product.stock > 0 %}
-        <div class="botao_comprar product-details-action" data-element="action-buy" style="margin:auto; border-bottom:0;">
+        <div class="botao_comprar product-details-action" data-element="action-buy" style="border-bottom:0;">
           <div class="product-buttons-action flex" align-items="center" wrap="true" gap="20">
             {% if (quantity_select.status) and (product.attributes is not defined or product.attributes.type == "combo") %}
             <input name="quantity" id="quantity"  class="quantitySelect" type="number" value="{{ quantity_select.min }}" step="1" min="{{ quantity_select.min }}" max="{{ quantity_select.max }}">
             {% endif %}
-            <div class="action-button-buy flex" gap="10" align-items="center">
+            <div class="action-button-buy flex" gap="10" align-items="center" style="flex-wrap:wrap;">
               <a data-action="productInfo.buy" data-type="buttonAction" class="btn-buy" data-format-result="productInfo.formatBuyResult">
                 <button alt="Comprar" type="button" class="button-style-primary btn btn-primary btn-lg bt-buy" title="Comprar">
                   <span>
@@ -895,10 +922,13 @@
                   </span>
                 </button>
               </a>
-                <p>{{ product.group.name|raw }}</p>
+              {# {{ product.stock }}
+              {% for key in product|keys %}
+                {{ key }}
+              {% endfor %} #}
               {# https://wa.me/5521970769075?text=Ol%C3%A1,%0Agostaria%20de%20comprar%20ao%20produto:%20*REF* #}
               {# https://wa.me/5521970769075?text=Ol%C3%A1,%20gostaria%20de%20comprar%20o%20produto%20de%20refer%C3%AAncia%20tal. #}
-              {% set textoMensagemWhatsapp = variables.informacoes_loja.mensagem_whatsapp_bt|raw|replace({'norton-produto': product.sku, 'á':'%C3%A1', 'ê': '%C3%AA', ' ': '%20'}) %}
+              {% set textoMensagemWhatsapp = variables.informacoes_loja.mensagem_whatsapp_bt|raw|replace({'norton-produto': product.name, 'norton-referencia': product.sku, 'á':'%C3%A1', 'ê': '%C3%AA', ' ': '%20'}) %}
               {# {% set textoMensagemWhatsappFormatado = textoMensagemWhatsapp|replace({'norton-produto': product.sku})|url_encode|convert_encoding('UTF-8', 'iso-2022-jp') %} #}
               {# <a href="https://wa.me/{{ variables.informacoes_loja.whatsapp }}?text={{ (textoMensagemWhatsappFormatado|raw)|replace({"á" : "%C3%A", "ê" : "%C3%AA"}) }}" target="_blank"> #}
               <a href="https://wa.me/+55{{ variables.informacoes_loja.whatsapp }}?text={{ textoMensagemWhatsapp }}" target="_blank">
@@ -909,13 +939,12 @@
                         <path id="Vector" d="M14.0467 2.54499C7.67667 2.54499 2.485 7.73666 2.485 14.1067C2.485 16.1483 3.02167 18.1317 4.025 19.8817L2.39167 25.8783L8.51667 24.2683C10.2083 25.19 12.11 25.68 14.0467 25.68C20.4167 25.68 25.6083 20.4883 25.6083 14.1183C25.6083 11.0267 24.4067 8.12166 22.225 5.93999C21.1554 4.85957 19.8814 4.00294 18.4772 3.42005C17.0731 2.83716 15.567 2.5397 14.0467 2.54499ZM14.0583 4.49332C16.625 4.49332 19.0283 5.49666 20.8483 7.31666C21.7415 8.20957 22.4497 9.27003 22.9322 10.4372C23.4147 11.6044 23.662 12.8553 23.66 14.1183C23.66 19.415 19.3433 23.72 14.0467 23.72C12.32 23.72 10.6283 23.265 9.15833 22.3783L8.80833 22.18L5.16833 23.1367L6.13667 19.59L5.90333 19.2167C4.9396 17.6868 4.42985 15.9148 4.43333 14.1067C4.445 8.80999 8.75 4.49332 14.0583 4.49332ZM9.95167 8.76332C9.765 8.76332 9.45 8.83332 9.18167 9.12499C8.925 9.41666 8.16667 10.1283 8.16667 11.54C8.16667 12.9633 9.205 14.3283 9.33333 14.5267C9.49667 14.725 11.3867 17.6417 14.2917 18.8783C14.98 19.1933 15.5167 19.3683 15.9367 19.4967C16.625 19.7183 17.255 19.6833 17.7567 19.6133C18.3167 19.5317 19.46 18.9133 19.705 18.2367C19.95 17.56 19.95 16.9883 19.88 16.86C19.7983 16.7433 19.6117 16.6733 19.32 16.545C19.0283 16.3817 17.605 15.6817 17.3483 15.5883C17.08 15.495 16.9167 15.4483 16.695 15.7283C16.5083 16.02 15.9483 16.6733 15.785 16.86C15.61 17.0583 15.4467 17.0817 15.1667 16.9417C14.8633 16.79 13.93 16.4867 12.8333 15.5067C11.97 14.7367 11.3983 13.7917 11.2233 13.5C11.0833 13.22 11.2117 13.045 11.3517 12.9167C11.48 12.7883 11.6667 12.5783 11.7833 12.4033C11.935 12.24 11.9817 12.1117 12.075 11.925C12.1683 11.7267 12.1217 11.5633 12.0517 11.4233C11.9817 11.295 11.3983 9.84832 11.1533 9.27666C10.92 8.71666 10.6867 8.78666 10.5 8.77499C10.3367 8.77499 10.15 8.76332 9.95167 8.76332Z" fill="white"/>
                       </g>
                     </svg>
-                    <span>
+                    <span style="display: flex; align-items: center; padding-left: 5px;">
                       Compre pelo Whatsapp!
                     </span>
                   </span>
                 </button>
               </a>
-              <p>{{  }}</p>
               {% if wishlist.status %}
               <div class="wishlist flex" align-items="center">
                 <button data-pid="{{ product.id }}" type="button" class="btn-wishlist">

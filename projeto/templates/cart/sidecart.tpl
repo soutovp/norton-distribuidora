@@ -111,15 +111,19 @@
   #side-cart {
     width: 100%;
     height: 100%;
-    max-width: 400px;
+    max-width: 50vw;
     position: fixed;
     top: 0;
     right: 0;
     padding: 15px;
     background: var(--cor-bg-corpo);
-    z-index: 10;
+    z-index: 999;
     transform: translateX(110%);
     transition: all ease-in-out .5s;
+  }
+  .finish-order{
+    width: 100%;
+    height: 50px;
   }
   #side-cart.show-cart {
     transform: translateX(0);
@@ -289,7 +293,8 @@
   /*Sidenav-header*/
   .cart-items-title span.sidecart-items-counter {
     top: -5px;
-    right: -15px;
+    right: -25px;
+    background-color: #333;
   }
   span.sidecart-items-counter {
     /*

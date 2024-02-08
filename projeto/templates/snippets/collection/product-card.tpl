@@ -30,7 +30,7 @@
   </div>
   {% if discount>0 and product.price.sale > 0%}
   <div class="discount-chip position-absolute flex" wrap="true">
-    <span class="discount-value">-{{discount}}%
+    <span class="discount-value">{{discount}}% de Desconto
     </span>
   </div>
   {% endif %}

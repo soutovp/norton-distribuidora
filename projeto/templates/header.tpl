@@ -1,16 +1,9 @@
-<link href="{{ variables.cms_config_geral.cms_fonte_url }}" rel="stylesheet" />
+<link href="{{ variables.cms_config_geral.cms_fonte_url }}" rel="stylesheet"/>
 {% include 'assets/style_variables.tpl' %}
 {{ include('cart/sidecart.tpl', {type:'body'})}}
 <style>
   /*-- Inclus?o de css geral --*/
-  {% include 'assets/showcase_style.css' %}
-  {% include 'assets/utility.css' %}
-  {% include 'assets/buttons.css' %}
-  {% include 'assets/collection_list.css' %}
-  {% include 'assets/form_inputs.css' %}
-  {% include 'assets/theme_template.css' %}
-  {% include 'assets/templatenovo.css' %}
-  /*-- Fim Inclus?o de css geral --*/
+  {% include 'assets/showcase_style.css' %}{% include 'assets/utility.css' %}{% include 'assets/buttons.css' %}{% include 'assets/collection_list.css' %}{% include 'assets/form_inputs.css' %}{% include 'assets/theme_template.css' %}{% include 'assets/templatenovo.css' %}/*-- Fim Inclus?o de css geral --*/
   /*== HEADER ==*/
   /*-- header top --*/
   .header-contacts-sociais {
@@ -20,7 +13,8 @@
   .header-top {
     background-color: var(--cor-bg-login);
   }
-  .header-container-top a, .header-container-top span {
+  .header-container-top a,
+  .header-container-top span {
     color: var(--cor-txt-login);
   }
   .header-container-top a:hover {
@@ -39,21 +33,26 @@
   .header-container-body {
     padding: 1.875rem 0.938rem;
   }
-  .header-logo, .header-cart, .header-menu {
+  .header-logo,
+  .header-cart,
+  .header-menu {
     align-self: center;
   }
   .header-logo {
     gap: 10px;
   }
   .header-logo img {
-    height: {{ variables.cms_cabecalho.cms_altura_img_logo }}px;
+    height: {{variables.cms_cabecalho.cms_altura_img_logo}}
+      px;
   }
   .header-user-area ul {
     gap: 20px;
     position: relative;
     justify-content: end;
   }
-  .header-user-area ul li, .header-user-area ul li a, .btn-openMenu {
+  .header-user-area ul li,
+  .header-user-area ul li a,
+  .btn-openMenu {
     color: var(--cor-txt-cabecalho);
   }
   .header-user {
@@ -66,22 +65,22 @@
     margin: 0;
     border-radius: 0;
     border: none;
-    box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.11);
-    -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.11);
-    -webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.11);
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.11);
+    -moz-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.11);
+    -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.11);
     padding: 15px;
-    right: 0px;
+    right: 0;
     top: 37px;
     visibility: hidden;
     opacity: 0;
     min-width: 150px;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -ms-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
   }
-  .header-icon-user:hover .header-customer-area{
+  .header-icon-user:hover .header-customer-area {
     visibility: visible;
     opacity: 1;
   }
@@ -94,7 +93,8 @@
   .header-customer-area a {
     width: fit-content;
   }
-  .header-customer-area .logged-in, .header-customer-area .logged-out {
+  .header-customer-area .logged-in,
+  .header-customer-area .logged-out {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -118,7 +118,8 @@
   .header-navigation-list {
     gap: 15px;
   }
-  .header-body:not(.fixed) .header-central-logo .header-navigation-list, .header-body:not(.fixed) .header-central-logo .header-user-area {
+  .header-body:not(.fixed) .header-central-logo .header-navigation-list,
+  .header-body:not(.fixed) .header-central-logo .header-user-area {
     min-width: 350px;
   }
   .header-body:not(.fixed) .header-central-logo .header-user-area ul {
@@ -127,20 +128,20 @@
   .header-contact-list {
     line-height: 1.500;
   }
-  .header--mobile .header__top-links > li{
+  .header--mobile .header__top-links > li {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
   }
-  .header--mobile .header__top-links > li > a{
+  .header--mobile .header__top-links > li > a {
     height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 5px;
   }
-  @media (min-width: 1000px) {
+  @media(min-width: 1000px) {
     /*-- logo centralizada --*/
     .header-body:not(.fixed) .header-central-logo .header-logo {
       margin: 0 auto;
@@ -154,7 +155,8 @@
     .header-body:not(.fixed) .header-central-logo .header-search {
       order: 1;
     }
-    .header-body:not(.fixed) .header-central-logo .header-search, .header-body:not(.fixed) .header-central-logo .header-user-area {
+    .header-body:not(.fixed) .header-central-logo .header-search,
+    .header-body:not(.fixed) .header-central-logo .header-user-area {
       min-width: unset;
       max-width: 20%;
     }
@@ -162,7 +164,7 @@
       order: 3;
     }
   }
-  @media (max-width: 1000px){
+  @media(max-width: 1000px) {
     .header-body .header-central-logo {
       gap: 0 15px;
       display: flex;
@@ -172,7 +174,8 @@
       height: auto;
       width: 100%;
     }
-    .header-body:not(.fixed) .header-central-logo .header-navigation-list, .header-body:not(.fixed) .header-central-logo .header-user-area {
+    .header-body:not(.fixed) .header-central-logo .header-navigation-list,
+    .header-body:not(.fixed) .header-central-logo .header-user-area {
       min-width: unset;
     }
     .header-body:not(.fixed) .header-central-logo .flex[width='4'] {
@@ -196,8 +199,8 @@
     display: block;
     -webkit-border-radius: 3px;
     border-radius: 3px;
-    -o-transition: all .1s ease-in-out;
-    transition: all .1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
   .bars-cab-scroll span:nth-child(2) {
     top: 10px;
@@ -213,7 +216,7 @@
     top: 6px;
   }
   .two-bars {
-    top: 4.3px!important;
+    top: 4.3px !important;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -246,9 +249,9 @@
   }
   /*-- buca suggestions --*/
   .autocomplete-suggestions {
-    box-shadow: 0px 2px 7px 0px rgb(0 0 0 / 11%);
-    -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.11);
-    -webkit-box-shadow: 0px 2px 7px 0px rgb(0 0 0 / 11%);
+    box-shadow: 0 2px 7px 0 rgb(0 0 0 / 11%);
+    -moz-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.11);
+    -webkit-box-shadow: 0 2px 7px 0 rgb(0 0 0 / 11%);
     border: 1px solid #f9f9f9;
   }
   .autocomplete-suggestion {
@@ -291,14 +294,14 @@
     background-color: var(--cor-realce-bt-confirm);
   }
   /*-- fim CSS search --*/
-  @media (max-width: 1200px) {
+  @media(max-width: 1200px) {
     .header-body:not(.fixed) .header-menu {
       order: 3;
       width: 100%;
     }
   }
   /*--fim header body --*/
-  @media (max-width: 1000px) {
+  @media(max-width: 1000px) {
     .header-navigation-list {
       display: none;
     }
@@ -306,7 +309,8 @@
       order: 3;
       width: 100%;
     }
-    .header-body .header-container-body .header-content .header-logo, .header-user-area {
+    .header-body .header-container-body .header-content .header-logo,
+    .header-user-area {
       max-width: 180px !important;
     }
     .header-icon {
@@ -321,7 +325,7 @@
       height: auto;
     }
   }
-  @media (max-width: 768px) {
+  @media(max-width: 768px) {
     .header-navigation-list {
       display: none;
     }
@@ -392,8 +396,8 @@
     height: 70px;
     z-index: 9;
     width: 100%;
-    -webkit-box-shadow: 0px 0px 3px 3px rgb(0 0 0 / 3%);
-    box-shadow: 0px 0px 3px 3px rgb(0 0 0 / 3%);
+    -webkit-box-shadow: 0 0 3px 3px rgb(0 0 0 / 3%);
+    box-shadow: 0 0 3px 3px rgb(0 0 0 / 3%);
   }
   .header-body.fixed .header-container-body {
     height: 100%;
@@ -409,18 +413,18 @@
   max-height: 36px;
   }
   */
-  .header-body.fixed .header-navigation-list{
+  .header-body.fixed .header-navigation-list {
     display: none;
   }
   .header-body.fixed .header-user-area ul {
     font-size: 1em;
   }
-  @media (max-width: 600px) {
+  @media(max-width: 600px) {
     .header-body.fixed {
       height: auto;
     }
   }
-  /*== FIM HEADER FIXED ==*/  
+  /*== FIM HEADER FIXED ==*/
 </style>
 {% if (section.id != "pages_content" or "lp" not in section.slug or variables.cms_cabecalho.cms_exibir_lp) %}
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -436,11 +440,10 @@
 {% set fixo_prefixo = variables.informacoes_loja.telefone|slice(2,4) %}
 {% set fixo_sufixo = variables.informacoes_loja.telefone|slice(6, 4) %}
 {% set fixo_formatado = '(' ~ fixo_ddd ~ ') ' ~ fixo_prefixo ~ '-' ~ fixo_sufixo %}
-<!-- FIM --> 
+<!-- FIM -->
 <!--LP sem cabecalho-->
 {% if section.id == "pages_content" and "lp" in section.slug %}
-<div class="float-sidecart-button sidecart-button">
-  {{ include('cart/sidecart.tpl', {type:'button'})}}
+<div class="float-sidecart-button sidecart-button"> {{ include('cart/sidecart.tpl', {type:'button'})}}
 </div>
 <style>
   section.pages_content .container {
@@ -485,18 +488,18 @@
     color: var(--cor-txt-gerais, #000);
     width: 48px;
     height: 48px;
-    webkit-box-shadow: 0px 3px 10px -6px #000000, 0px 0px 5px 5px rgb(0 0 0 / 0%);
-    box-shadow: 0px 3px 10px -6px #000000, 0px 0px 5px 5px rgb(0 0 0 / 0%);
+    webkit-box-shadow: 0 3px 10px -6px #000000, 0 0 5px 5px rgb(0 0 0 / 0%);
+    box-shadow: 0 3px 10px -6px #000000, 0 0 5px 5px rgb(0 0 0 / 0%);
   }
   .float-sidecart-button:hover {
     opacity: 1;
   }
-  .float-sidecart-button .sidecart-items-counter{
-    top: 0px;
-    right: 0px;
+  .float-sidecart-button .sidecart-items-counter {
+    top: 0;
+    right: 0;
   }
 </style>
-{% endif %} 
+{% endif %}
 <!--FIM-->
 {% if (section.id != "pages_content" or "lp" not in section.slug or variables.cms_cabecalho.cms_exibir_lp) %}
 <header class="header header--standard header--market-place-4">
@@ -505,183 +508,268 @@
   <div class="header-spacer" style="height: 0px;">
   </div>
   <div class="header-top">
-    {# MEU CODIGO HEADER #}
-    <div class="header__top">
-      <div class="container">
-        <div class="header__right">
-          <ul class="header__top-links">
-            <li>
-              <a href="#">
-                <img src="{{ variables.icones_loja.icone_chat }}" alt="Balão Fale Conosco">
-                <span>Fale Conosco</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://api.whatsapp.com/send?phone=55{{ variables.informacoes_loja.whatsapp }}" target="_blank">
-                <img src="{{ variables.icones_loja.icone_whatsapp }}" alt="Icone do Whatsapp">
-                <span>{{ tel_formatado }}</span>
-              </a>
-            </li>
-            <li>
-              <a href="tel:{{ variables.informacoes_loja.telefone }}">
-                <img src="{{ variables.icones_loja.icone_telefone }}" alt="Icone do telefone">
-                <span>{{ fixo_formatado}}</span>
-              </a>
-            </li>
-            <li>
-              Horário de Atendimento: 
-              <span>Seg a sex de {{ variables.informacoes_loja.horario_inicio }} ás {{ variables.informacoes_loja.horario_final }}
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <style>
+      .cupom-header {
+        /* background: linear-gradient(#333, red, #333); */
+        background-color:  #DD1836;
+				z-index: 998;
+        width: 100%;
+        position: fixed;
+        top: 0;
+      }
+      .cupom-header p,
+      .cupom-header p button {
+        padding: .5em;
+        text-align: center;
+        font-size: 1em !important;
+        font-family: Arial, sans-serif;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: #fff;
+      }
+      .cupom-header p span {
+        font-size: 1.5em !important;
+        animation-name: mudaCor;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        font-weight: 900;
+      }
+      .cupom-header p button {
+        background: none;
+        border: none;
+        font-size: 1em !important;
+        padding: 0;
+        border-bottom: 3px solid transparent;
+      }
+      .cupom-header p button:hover {
+        cursor: pointer;
+        animation-name: mudaCor;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        border-bottom: 3px solid #fff;
+      }
+      @keyframes mudaCor {
+        0%,
+        50% {
+          color: rgb(51, 51, 51);
+          border-color: rgb(51, 51, 51);
+        }
+        51%,
+        100% {
+          color: rgb(255, 217, 0);
+          border-color: rgb(255, 217, 0);
+        }
+      }
+      @media (max-width: 700px) {
+        .cupom-header p,
+        .cupom-header p button {
+          font-size: 1em !important;
+        }
+      }
+			.norton-sticky{
+						width: 100%;
+						position: fixed;
+						top: 0;
+					}
+					.norton-sticky-header{
+						width: 100%;
+						position: fixed;
+					}
+    </style>
+    <div class="cupom-header" id="norton-cupom-header">
+      <p>Ganhe
+        <span> 10% 
+        </span>
+        de desconto na primeira compra! CUPOM:
+        <button id="cupom-desconto">BEMVINDO
+        </button>
+      </p>
     </div>
-    <div class="header__content">
-      <div class="container">
-        <div class="header__content-left">
-          <a class="ps-logo" href="/index.php">
-            <img src="{{images.logo}}" alt="">
-          </a>
-        </div>
-        <div class="header__content-center">
-          <form class="ps-form--quick-search" action="{{goto.search}}" method="get" name="frmbusca" id="frmbusca">
-            <input class="form-control" id="keywords" name="keywords" placeholder="Buscar..." type="text" autofocus>
-            <button type="submit">
-              {#<i class="fal fa-search"></i>#}
-              Procurar
-            </button>
-          </form>
-        </div>
-        {% set icons_color = '#FFFFFF' %} <!-- CORES DOS ICONES A SEGUIR! -->
-        {% set icons_hover = '#DD1836' %} <!-- CORES DOS ICONES EM HOVER! -->
+{# 
+  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+  HEADER CONTENT   
+  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+#}
+<div class="header__content" id="norton-header__content" style="position: fixed; width:100%; top:40px;">
+  <div class="container">
+    <div class="header__content-left">
+      <a class="ps-logo" href="/index.php">
+        <img src="{{images.logo}}" alt="Norton Distribuidora" id="norton-image-logo" class="" style="transition: .2s;">
+      </a>
+    </div>
+    <div class="header__content-center">
+      <form class="ps-form--quick-search" action="{{goto.search}}" method="get" name="frmbusca" id="frmbusca">
+        <input class="form-control" id="keywords" name="keywords" placeholder="Buscar..." type="text" autofocus>
+        <button
+                type="submit">
+          {#<i class="fal fa-search"></i>#}
+          Procurar
+        </button>
+      </form>
+    </div>
+    {% set icons_color = '#FFFFFF' %}
+    <!-- CORES DOS ICONES A SEGUIR! -->
+    {% set icons_hover = '#DD1836' %}
+    <!-- CORES DOS ICONES EM HOVER! -->
+    <style>
+      .header__extra:hover .icons_hover_fill,
+      .ps-cart--mini:hover .icons_hover_fill {
+        fill: {{icons_hover|raw}}
+          ;
+      }
+      .ps-block--user-header:hover .icons_hover_fill {
+        stroke: {{icons_hover|raw}}
+          ;
+      }
+    </style>
+    <div class="header__content-right">
+      <div class="header__actions">
         <style>
-          .header__extra:hover .icons_hover_fill, .ps-cart--mini:hover .icons_hover_fill{
-            fill: {{icons_hover|raw}};
+          .norton-atendimento {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
           }
-          .ps-block--user-header:hover .icons_hover_fill{
-            stroke: {{icons_hover|raw}};
+          .norton-atendimento > p {
+            color: #FFFFFF;
+            font-weight: 700;
           }
+					
         </style>
-        <div class="header__content-right">
-          <div class="header__actions">
-            <style>
-              .norton-atendimento{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 10px;
-              }
-              .norton-atendimento > p{
-                color: #FFFFFF;
-                font-weight: 700;
-              }
-            </style>
-            <a href="/atendimento/">
-              <div class="norton-atendimento">
-                <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.74 30.731L16 29.731L20 22.731H26C26.5304 22.731 27.0391 22.5202 27.4142 22.1452C27.7893 21.7701 28 21.2614 28 20.731V8.73096C28 8.20052 27.7893 7.69182 27.4142 7.31674C27.0391 6.94167 26.5304 6.73096 26 6.73096H6C5.46957 6.73096 4.96086 6.94167 4.58579 7.31674C4.21071 7.69182 4 8.20052 4 8.73096V20.731C4 21.2614 4.21071 21.7701 4.58579 22.1452C4.96086 22.5202 5.46957 22.731 6 22.731H15V24.731H6C4.93913 24.731 3.92172 24.3095 3.17157 23.5594C2.42143 22.8092 2 21.7918 2 20.731V8.73096C2 7.67009 2.42143 6.65268 3.17157 5.90253C3.92172 5.15238 4.93913 4.73096 6 4.73096H26C27.0609 4.73096 28.0783 5.15238 28.8284 5.90253C29.5786 6.65268 30 7.67009 30 8.73096V20.731C30 21.7918 29.5786 22.8092 28.8284 23.5594C28.0783 24.3095 27.0609 24.731 26 24.731H21.16L17.74 30.731Z" fill="white"/>
-                  <path d="M8 10.731H24V12.731H8V10.731ZM8 16.731H18V18.731H8V16.731Z" fill="white"/>
-                </svg>
-                <p>Atendimento</p>
-              </div>
+        <a href="/atendimento/">
+          <div class="norton-atendimento">
+            <svg width="32" height="33" viewbox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.74 30.731L16 29.731L20 22.731H26C26.5304 22.731 27.0391 22.5202 27.4142 22.1452C27.7893 21.7701 28 21.2614 28 20.731V8.73096C28 8.20052 27.7893 7.69182 27.4142 7.31674C27.0391 6.94167 26.5304 6.73096 26 6.73096H6C5.46957 6.73096 4.96086 6.94167 4.58579 7.31674C4.21071 7.69182 4 8.20052 4 8.73096V20.731C4 21.2614 4.21071 21.7701 4.58579 22.1452C4.96086 22.5202 5.46957 22.731 6 22.731H15V24.731H6C4.93913 24.731 3.92172 24.3095 3.17157 23.5594C2.42143 22.8092 2 21.7918 2 20.731V8.73096C2 7.67009 2.42143 6.65268 3.17157 5.90253C3.92172 5.15238 4.93913 4.73096 6 4.73096H26C27.0609 4.73096 28.0783 5.15238 28.8284 5.90253C29.5786 6.65268 30 7.67009 30 8.73096V20.731C30 21.7918 29.5786 22.8092 28.8284 23.5594C28.0783 24.3095 27.0609 24.731 26 24.731H21.16L17.74 30.731Z" fill="white"/>
+              <path d="M8 10.731H24V12.731H8V10.731ZM8 16.731H18V18.731H8V16.731Z" fill="white"/>
+            </svg>
+            <p>Atendimento
+            </p>
+          </div>
+        </a>
+        <a
+           class="header__extra" href="/minha-conta/listas/desejo/">
+          <!--<img src="{#{{ variables.icones_loja.coracao }}#}" alt="Ícone de coração, like.">-->
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 256 256">
+            <path class="icons_hover_stoke" fill="{{icons_color|raw}}" d="M178 28c-20.09 0-37.92 7.93-50 21.56C115.92 35.93 98.09 28 78 28a66.08 66.08 0 0 0-66 66c0 72.34 105.81 130.14 110.31 132.57a12 12 0 0 0 11.38 0C138.19 224.14 244 166.34 244 94a66.08 66.08 0 0 0-66-66m-5.49 142.36a328.69 328.69 0 0 1-44.51 31.8a328.69 328.69 0 0 1-44.51-31.8C61.82 151.77 36 123.42 36 94a42 42 0 0 1 42-42c17.8 0 32.7 9.4 38.89 24.54a12 12 0 0 0 22.22 0C145.3 61.4 160.2 52 178 52a42 42 0 0 1 42 42c0 29.42-25.82 57.77-47.49 76.36"/>
+          </svg>
+          <span>
+            <i>0
+            </i>
+          </span>
+        </a>
+        <div class="ps-cart--mini">
+          {{ include('cart/sidecart.tpl', {type:'button', color: icons_color|raw, hover: icons_hover|raw})}}
+        </div>
+        <div class="ps-block--user-header">
+          <div class="ps-block__left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icons_hover_stroke" width="36" height="36" viewbox="0 0 24 24">
+              <g class="icons_hover_stroke" fill="none" stroke="{{icons_color|raw}}" stroke-width="2.5">
+                <path stroke-linejoin="round" d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
+                <circle cx="12" cy="7" r="3"/>
+              </g>
+            </svg>
+            <!--<img src="{{ variables.icones_loja.perfil }}" alt="Ícone de Perfil"> -->
+          </div>
+          <div class="ps-block__right">
+            <a href="{{goto.login}}">Login
             </a>
-            <a class="header__extra" href="#">
-              <!--<img src="{#{{ variables.icones_loja.coracao }}#}" alt="Ícone de coração, like.">-->
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
-                <path class="icons_hover_stoke" fill="{{icons_color|raw}}" d="M178 28c-20.09 0-37.92 7.93-50 21.56C115.92 35.93 98.09 28 78 28a66.08 66.08 0 0 0-66 66c0 72.34 105.81 130.14 110.31 132.57a12 12 0 0 0 11.38 0C138.19 224.14 244 166.34 244 94a66.08 66.08 0 0 0-66-66m-5.49 142.36a328.69 328.69 0 0 1-44.51 31.8a328.69 328.69 0 0 1-44.51-31.8C61.82 151.77 36 123.42 36 94a42 42 0 0 1 42-42c17.8 0 32.7 9.4 38.89 24.54a12 12 0 0 0 22.22 0C145.3 61.4 160.2 52 178 52a42 42 0 0 1 42 42c0 29.42-25.82 57.77-47.49 76.36"/>
-              </svg>
-              <span>
-                <i>0</i>
-              </span>
+            <a href="{{goto.register}}">Register
             </a>
-            <div class="ps-cart--mini">
-              {{ include('cart/sidecart.tpl', {type:'button', color: icons_color|raw, hover: icons_hover|raw})}}
-            </div>
-            <div class="ps-block--user-header">
-              <div class="ps-block__left">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icons_hover_stroke" width="36" height="36" viewBox="0 0 24 24">
-                  <g class="icons_hover_stroke" fill="none" stroke="{{icons_color|raw}}" stroke-width="2.5">
-                    <path stroke-linejoin="round" d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
-                    <circle cx="12" cy="7" r="3"/>
-                  </g>
-                </svg>
-                <!--<img src="{{ variables.icones_loja.perfil }}" alt="Ícone de Perfil"> -->
-              </div>
-              <div class="ps-block__right">
-                <a href="{{goto.login}}">Login
-                </a>
-                <a href="{{goto.register}}">Register
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
-    {# FIM DO MEU CODIGO HEADER#}
   </div>
-  </div>
+</div>
+<div id="norton-header-spacing" style="display:block;"></div>
+<script>
+  window.onscroll = ()=>stickFunction();
+  var header__content = document.getElementById("norton-header__content");
+  var norton_header_spacing = document.getElementById('norton-header-spacing');
+  {# var distanciaMargin = header__content.offsetHeight + norton_cupom_header.offsetHeight;#}
+  var distanciaMargin = header__content.offsetHeight-12;
+  norton_header_spacing.style.marginBottom = `${distanciaMargin}px`;
+  console.log(distanciaMargin);
+  function stickFunction() {
+    let norton_image_lg = norton_image_logo.offsetWidth;
+    console.log(`PageYOffset: ${window.pageYOffset}\nSticky__header: ${sticky__header}`);
+    if (window.pageYOffset > sticky__header) {
+      header__content.classList.add("norton-sticky-header");
+      norton_image_logo.classList.add("norton-image-size");
+    } else {
+      header__content.classList.remove("norton-sticky-header");
+      norton_image_logo.classList.remove('norton-image-size');
+    }
+    if (window.pageYOffset > cupom_sticky) {
+      cupom_header.classList.add("norton-sticky");
+    } else {
+      cupom_header.classList.remove("norton-sticky");
+    }
+    if(header__content.offsetHeight < 100){
+      norton_header_spacing.style.marginBottom = `${distanciaMargin}px`;
+    }
+  }
+		var sticky__header = header__content.offsetTop;
+		var cupom_header = document.getElementById("norton-cupom-header");
+		var cupom_sticky = cupom_header.offsetTop;
+		var norton_image_logo = document.getElementById('norton-image-logo');
+</script>
+{# FIM DO MEU CODIGO HEADER#}
+</div>
+</div>
 {% endif %}
 {% if variables.cms_cabecalho.cms_bg_cabecalho is not empty %}
 </div>
-{% endif %}
-</div>
-</div>
-{% if variables.cms_cabecalho.cms_bg_menu is not empty %}
-{% include 'snippets/menu_header.tpl' %}
-{% endif %}
-</div>
-{% endif %}
-</header>
-{# HEADER MOBILE --------------------------------------------------------------------- #}
-<header class="header header--mobile" data-sticky="true">
-  <style>
-    /* HEADER TOP --------------------*/
-    .header___top{
+{% endif %}</div>
+</div>{% if variables.cms_cabecalho.cms_bg_menu is not empty %}{% include 'snippets/menu_header.tpl' %}{% endif %}</div>{% endif %}</header>{# HEADER MOBILE --------------------------------------------------------------------- #}<header class="header header--mobile" data-sticky="true">
+  <style>/* HEADER TOP --------------------*/
+    .header___top {
       background-color: #5B5B5B;
       color: #FFF;
     }
-    .header___top ul{
+    .header___top ul {
       margin: 0;
       padding: 0;
       list-style: none;
     }
-    .header___top li{
+    .header___top li {
       display: flex;
       align-items: center;
       gap: 5px;
       padding: 10px;
     }
-    .header___top a{
+    .header___top a {
       color: #FFF;
       text-decoration: none;
     }
     /* MENU --------------------*/
-    .header__menu{
+    .header__menu {
       background-color: #333;
       color: #FFF;
     }
-    .header__menu{
+    .header__menu {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       padding: 10px;
     }
-    #logoNorton{
+    #logoNorton {
       width: 150px;
     }
-    .menu_hamburger{
+    .menu_hamburger {
       margin: auto 0;
     }
-    .header__menu div.hamburger{
+    .header__menu div.hamburger {
       width: 25px;
       height: 2px;
       background-color: #FFF;
       border-radius: 1px;
       margin: 14px 0;
     }
-    .header__menu div.hamburger::before{
+    .header__menu div.hamburger::before {
       display: block;
       content: "";
       position: relative;
@@ -691,7 +779,7 @@
       background-color: #FFF;
       border-radius: 1px;
     }
-    .header__menu div.hamburger::after{
+    .header__menu div.hamburger::after {
       display: block;
       content: "";
       position: relative;
@@ -701,50 +789,50 @@
       background-color: #FFF;
       border-radius: 1px;
     }
-    #button_hamburger{
+    #button_hamburger {
       background: none;
       color: transparent;
       border: none;
     }
-    #__menu{
-      transition: .5s ease-in-out;
+    #__menu {
+      transition: 0.5s ease-in-out;
       z-index: 999;
     }
-    #__menu-close{
+    #__menu-close {
       /*transition: .5s;*/
       position: fixed;
       top: 0;
       left: 80vw;
       height: 100vh;
       width: 20vw;
-      background: rgba(0,0,0,.5);
+      background: rgba(0, 0, 0, 0.5);
       z-index: 999;
     }
-    @media (max-width: 1200px){
-      .header__menu{
+    @media(max-width: 1200px) {
+      .header__menu {
         padding: 0 20%;
       }
-      .header___top ul{
+      .header___top ul {
         font-size: x-small;
       }
-      .header___top li > img{
+      .header___top li > img {
         width: 24px;
       }
-      .header___top ul{
+      .header___top ul {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
       }
-      .header___top > div{
+      .header___top > div {
         display: flex;
         align-items: center;
         justify-content: center;
         padding-top: 5px
       }
-      .header___top > div > p{
+      .header___top > div > p {
         color: #FFF;
       }
-      #__menu{
+      #__menu {
         position: fixed;
         top: 0;
         height: 100vh;
@@ -752,21 +840,21 @@
         background: #FFF;
       }
     }
-    @media (max-width: 425px){
-      .header__menu{
+    @media(max-width: 425px) {
+      .header__menu {
         padding: 0;
       }
     }
-    @media (max-width: 370px){
-      .header___top > div > p{
+    @media(max-width: 370px) {
+      .header___top > div > p {
         font-size: 10px;
         color: #FFF;
       }
-      .header___top li{
+      .header___top li {
         gap: 2.5px;
         padding: 5px;
       }
-      .header___top li > img{
+      .header___top li > img {
         width: 16px;
       }
     }
@@ -774,7 +862,7 @@
   <!-- HEADER TOP =============================================== -->
   <div class="header___top">
     <div>
-      <p>Horário de Atendimento - Seg a sex de {{ variables.informacoes_loja.horario_inicio }} ás {{ variables.informacoes_loja.horario_final }}</p>
+      <p>Horário de Atendimento - Seg a sex de{{ variables.informacoes_loja.horario_inicio }}ás{{ variables.informacoes_loja.horario_final }}</p>
     </div>
     <div>
       <ul>
@@ -800,15 +888,13 @@
     </div>
   </div>
   <!-- MENU OPEN / CLOSE ======================================== -->
-  <div id="__menu" style="transform: translateX(-100%);">
-    {% include 'snippets/menu_header_mobile.tpl' %}
-  </div>
+  <div id="__menu" style="transform: translateX(-100%);">{% include 'snippets/menu_header_mobile.tpl' %}</div>
   <div id="__menu-close" style="display: none; ">
   </div>
   <!-- HEADER MENU ============================================== -->
   <div class="header__menu">
     <div class="menu_hamburger">
-      <button id="button_hamburger" onClick="">
+      <button id="button_hamburger" onclick="">
         <div class="hamburger">
         </div>
       </button>
@@ -820,45 +906,39 @@
     </div>
   </div>
   <!-- END -->
-</header>
-<script>
-  let __menu = document.getElementById('__menu');
+</header> 
+<script>let __menu = document.getElementById('__menu');
   let button_hamburger = document.getElementById('button_hamburger');
   let __menuClose = document.getElementById('__menu-close');
-  __menuClose.addEventListener('click', ()=>{
+  __menuClose.addEventListener('click', () => {
     console.log('Clicado!');
     __menu.style.transform == 'translateX(-100%)' ? __menu.style.transform = 'translateX(0)' : __menu.style.transform = 'translateX(-100%)';
-    if(__menuClose.style.display === 'block'){
+    if (__menuClose.style.display === 'block') {
       __menuClose.style.display = 'none'
     }
-    else{
-      setTimeout(()=>{
+    else {
+      setTimeout(() => {
         __menuClose.style.display == 'none' ? __menuClose.style.display = 'block' : __menuClose.style.display = 'none';
       }
                  , 500);
     }
   }
                               );
-  button_hamburger.addEventListener('click', ()=>{
+  button_hamburger.addEventListener('click', () => {
     console.log('Clicado!');
     __menu.style.transform == 'translateX(-100%)' ? __menu.style.transform = 'translateX(0)' : __menu.style.transform = 'translateX(-100%)';
-    if(__menuClose.style.display === 'block'){
+    if (__menuClose.style.display === 'block') {
       __menuClose.style.display = 'none'
     }
-    else{
-      setTimeout(()=>{
+    else {
+      setTimeout(() => {
         __menuClose.style.display == 'none' ? __menuClose.style.display = 'block' : __menuClose.style.display = 'none';
       }
                  , 500);
     }
   }
                                    );
-</script>
-{# FIM HEADER MOBILE --------------------------------------------------------------------- #}
-{% if section.id == "home" %}
-{% if variables.cms_cabecalho.cms_transp_header is not empty %}  
-<style>
-  /*-- Banner fixed --*/
+</script>{# FIM HEADER MOBILE --------------------------------------------------------------------- #}{% if section.id == "home" %}{% if variables.cms_cabecalho.cms_transp_header is not empty %}<style>/*-- Banner fixed --*/
   .header-body {
     background-color: transparent;
     position: absolute;
@@ -869,7 +949,7 @@
   .header-menu .automatic-menu {
     background: transparent !important;
   }
-  @media all and (max-width: 1000px) {
+  @media all and(max-width: 1000px) {
     .header-menu .automatic-menu {
       background: var(--cor-bg-menu) !important;
     }
@@ -877,24 +957,15 @@
       position: initial;
     }
   }
-  /*-- Fim banner fixed --*/
-</style>
-{% if banners.getByTag(['billboard']) is empty %}
-<style>
-  header .header-body {
+  /*-- Fim banner fixed --*/</style>{% if banners.getByTag(['billboard']) is empty %}<style>header .header-body {
     position: initial;
   }
-</style>
-{% endif %}
-{% endif %}
-{% endif %}
-{#
-{% endif %}
-#}
+</style>{% endif %}{% endif %}{% endif %}{#
+							{% endif %}
+#} 
 <script defer src="https://front-libs.iset.io/libs/quicksearch/auto-complete.min.js">
-</script>
-<script>
-  /* VALIDATE CUSTOMER-LOGIN */
+</script> 
+<script>/* VALIDATE CUSTOMER-LOGIN */
   $(document).ready(function () {
     var validCustomer = $.cookie("customer");
     if (validCustomer != null) {
@@ -911,9 +982,7 @@
     }
     /* AUTOCOMPLETE */
     $("#keywords, #frmbusca-mobi").autoComplete({
-      menuClass: "suggestions-fixed",
-      buttons: false,
-    }
+      menuClass: "suggestions-fixed", buttons: false}
                                                );
     /*SEARCHBAR ACTIONS*/
     $(".header-search").on("click", function () {
@@ -926,10 +995,8 @@
                                 );
   }
                    );
-</script>
-{% if (variables.cms_cabecalho.cms_floating_header) %}
-<script>
-  $(document).ready(function () {
+</script>{% if (variables.cms_cabecalho.cms_floating_header) %} 
+<script>$(document).ready(function () {
     /* FIXED HEADER HANDLER */
     $('.header-body').attr("data-bottom", $('.header-body').position().top + $('.header-body').height());
     checkHeaderPos();
@@ -941,19 +1008,19 @@
       let headerBottom = Number.parseInt($('.header-body').attr("data-bottom"));
       if ($(this).scrollTop() > headerBottom) {
         const topPos = $("#cart-offer").is(":visible") ? $("#cart-offer").height() : 0;
-        $(".header-body").css("top",topPos);
+        $(".header-body").css("top", topPos);
         $(".header-body").addClass("fixed");
-        if ($(".header-menu").hasClass("extended"))
+        if ($(".header-menu").hasClass("extended")) 
           $(".header-body").addClass("extended");
-        $(".header-spacer").css('height',(headerBottom-20)+'px');
-        $(".bars-cab-scroll").css("display","block");
+        $(".header-spacer").css('height', (headerBottom - 20) + 'px');
+        $(".bars-cab-scroll").css("display", "block");
         $(".header-menu").addClass("menu-hide");
       }
       else {
-        $(".header-body").css("top","auto");
+        $(".header-body").css("top", "auto");
         $(".header-body").removeClass("fixed");
-        $(".header-spacer").css('height','0px');
-        $(".bars-cab-scroll").css("display","none");
+        $(".header-spacer").css('height', '0px');
+        $(".bars-cab-scroll").css("display", "none");
         $(".header-menu").removeClass("menu-hide");
       }
       if (window.matchMedia('(max-width: 600px)').matches) {
@@ -961,6 +1028,5 @@
       }
     }
   }
-                   );
-</script>
-{% endif %}
+                         );
+</script>{% endif %}

@@ -3,8 +3,9 @@
     margin-bottom: 50px;
   }
   .section-header .hide-on-small-and-down {
-    font-size: 1em;
-    font-weight: 300;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: red;
   }
   .category-page .tag-center_top {
     margin: 0 10px 17px 0;
@@ -78,7 +79,7 @@
       </div>
       {% else %}
       <div class="w-100 text-center">
-        <span>Ainda não cadastramos produtos nesta sessão.
+        <span>Ainda nï¿½o cadastramos produtos nesta sessï¿½o.
           <br>Volte em breve para mais novidades!
         </span>
       </div>

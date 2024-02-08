@@ -95,6 +95,13 @@
   .header--standard .header__content-left .ps-logo {
     margin-left: 30px;
   }
+  .header--standard .header__content-left .ps-logo > img {
+    transition: .2s;
+  }
+  .header--standard .header__content-left .ps-logo > .norton-image-size {
+    transition: .2s;
+    width: 10em;
+  }
   
   .header--standard .header__content-center {
     max-width: 600px;
@@ -225,6 +232,7 @@
   
   .header--market-place-4 .header__content {
     background-color: #333;
+    z-index: 998;
   }
   
   .header--market-place-4 .header__content .container {
@@ -281,5 +289,6 @@
     }
     .header.header--mobile {
       display: block;
+      z-index: 998;
     }
   }

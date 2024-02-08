@@ -46,7 +46,7 @@
   max-height: 0;
 }
 .collection-sidebar-filter .sidebar-filter-block>.content {
-  max-height: 12rem;
+  max-height: 13rem;
   overflow: -moz-scrollbars-vertical;
   overflow-y: auto;
   overflow-anchor: none;

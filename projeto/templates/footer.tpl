@@ -125,10 +125,15 @@
   }
 </style>
 <!--api whats-->
-{% set tel_ddd = variables.cms_redes_sociais.cms_telefone_whats|slice(0, 2) %}
-{% set tel_prefixo = variables.cms_redes_sociais.cms_telefone_whats|slice(2, 5) %}
-{% set tel_sufixo = variables.cms_redes_sociais.cms_telefone_whats|slice(7, 4) %}
+{% set tel_ddd = variables.informacoes_loja.whatsapp|slice(0,2)%}
+{% set tel_prefixo = variables.informacoes_loja.whatsapp|slice(2,5) %}
+{% set tel_sufixo = variables.informacoes_loja.whatsapp|slice(7, 4) %}
 {% set tel_formatado = '(' ~ tel_ddd ~ ') ' ~ tel_prefixo ~ '-' ~ tel_sufixo %}
+<!-- api telefone -->
+{% set fixo_ddd = variables.informacoes_loja.telefone|slice(0,2)%}
+{% set fixo_prefixo = variables.informacoes_loja.telefone|slice(2,4) %}
+{% set fixo_sufixo = variables.informacoes_loja.telefone|slice(6, 4) %}
+{% set fixo_formatado = '(' ~ fixo_ddd ~ ') ' ~ fixo_prefixo ~ '-' ~ fixo_sufixo %}
 {% if variables.cms_redes_sociais.cms_telefone_whats is not empty %}
 <div class="plugin_whats">
   <a href="https://api.whatsapp.com/send?phone=55{{ variables.cms_redes_sociais.cms_telefone_whats }}" class="flex" align-items="center" justify-content="center" target="_blank">
@@ -158,7 +163,7 @@
   }
 </style>
 {% endif %}
-<!--Botão voltar ao topo-->
+<!--Bot?o voltar ao topo-->
 <a href="#" id="back2Top" title="Back to top">
   <i class="fa-duotone fa-circle-arrow-up fa-2x">
   </i>
@@ -179,156 +184,274 @@
   }
 </style>
 <!--FIM-->
+<style>
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  .norton-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #333;
+    color: #FFF;
+  }
+  .norton-footer > section{
+    box-sizing: border-box;
+    width: 20%;
+    padding: 5px;
+    margin: 2.5%;
+  }
+  .norton-footer section hr{
+    border: 2px solid red;
+    border-radius: 1px;
+  }
+  .norton-footer ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .norton-footer ul li{
+    margin: 5px 0;
+  }
+  .norton-footer section h3{
+    color: #FFFFFF;
+  }
+  .norton-footer-sobre p{
+    color: #FFFFFF;
+  }
+  .atendimento ul li p{
+    color: #FFFFFF;
+  }
+  .atendimento ul li{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
+  }
+  .horario p{
+    color: #FFF;
+  }
+  .norton-redes{
+    padding: 10px
+  }
+  .norton-redes img{
+    width: 36px;
+  }
+  .norton-redes img[alt="Instagram"]{
+    width: 33px
+  }
+  @media (max-width: 1200px){
+    .norton-footer .section-categorias, .norton-footer .section-institucional{
+      display: none;
+    }
+    .norton-footer > section{
+      box-sizing: border-box;
+      width: 45%;
+      padding: 5px;
+      margin: 2.5%;
+    }
+  }
+  @media (max-width: 600px){
+    .norton-footer{
+      flex-direction: column;
+      justify-content: center;
+    }
+    .norton-footer > section {
+      width: auto;
+    }
+    .norton-footer > section h3{
+      text-align: center;
+    }
+    .norton-footer-redes > div{
+      display: flex;
+      justify-content: center;
+    }
+    .section-contato > div.atendimento > ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .section-contato > div.atendimento > ul li{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+</style>
 {% if (section.id != "pages_content" or "lp" not in section.slug or variables.cms_rodape.cms_exibe_lp) %}
 {% if variables.cms_rodape.cms_bg_newsletter is not empty %}
-
-<!-- Inclusão da Newsletter -->
+{# <!--Inclus?o da Newsletter-->
 {% include 'snippets/newsletter.tpl' %}
-
-<!-- Fim inclusão -->
+<!--Fim inclus?o--> #}
 {% endif %}
-<footer class="foot">
-  {{ banners.getByTag(['banner-duplo','and']) }}
-  {% if variables.cms_rodape.cms_bg_rodape is not empty %}
-  <div class="foot-information">
-    <div class="foot-container foot-container-information flex" justify-content="center">
-      {% if variables.cms_rodape.cms_coluna_c is not empty %}
-      <!--COLUNA CONTATOS-->
-      <div class="foot-contact-list foot-content">
-        <div class="foot-logo flex" align-items="center" direction="column">
-          <a href="/index.php">
-            <img alt="logo-loja" height="{{ variables.cms_cabecalho.cms_altura_img_logo }}" src="{{images.logo}}" title="loja" width="auto" /> 
-          </a>
-          <div class="foot-social flex" justify-content="center">
-            {% if variables.cms_redes_sociais.cms_instagram is not empty %}
-            <div>
-              <a href="{{ variables.cms_redes_sociais.cms_instagram }}" target="_blank">
-                <i class="fab fa-instagram fa-2x">
-                </i>
-              </a>
-            </div>
-            {% endif %}
-            {% if variables.cms_redes_sociais.cms_twitter is not empty %}
-            <div>
-              <a href="{{ variables.cms_redes_sociais.cms_twitter }}" target="_blank">
-                <i class="fab fa-twitter fa-2x">
-                </i>
-              </a>
-            </div>
-            {% endif %}
-            {% if variables.cms_redes_sociais.cms_youtube is not empty %}
-            <div>
-              <a href="{{ variables.cms_redes_sociais.cms_youtube }}" target="_blank">
-                <i class="fab fa-youtube fa-2x">
-                </i>
-              </a>
-            </div>
-            {% endif %}
-            {% if variables.cms_redes_sociais.cms_tiktok is not empty %}
-            <div>
-              <a href="{{ variables.cms_redes_sociais.cms_tiktok }}" target="_blank">
-                <i class="fa-brands fa-tiktok fa-2x">
-                </i>
-              </a>
-            </div>
-            {% endif %}
-            {% if variables.cms_redes_sociais.cms_facebook is not empty %}
-            <div>
-              <a href="{{ variables.cms_redes_sociais.cms_facebook }}" target="_blank">
-                <i class="fab fa-facebook fa-2x">
-                </i>
-              </a>
-            </div>
-            {% endif %}
-            {% if variables.cms_redes_sociais.cms_pinterest is not empty %}
-            <div>
-              <a href="{{ variables.cms_redes_sociais.cms_pinterest }}" target="_blank">
-                <i class="fa-brands fa-pinterest fa-2x">
-                </i>
-              </a>
-            </div>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-      <!--FIM COLUNA CONTATOS-->
-      {% endif %}
-      {% if variables.cms_rodape.cms_coluna_b is not empty %}
-      <!--COLUNA PAGINAS-->
-      <div class="foot-information-pages foot-content foot-list">
-        <h5>{{ variables.cms_rodape.cms_coluna_b|raw }}</h5>
-        <ul>
-          {% for page in pages|slice(0,10) %}
-          <li>
-            <a href="{{page.url}}">{{ page.title | raw }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <!--FIM PAGINAS-->
-      {% endif %}
-      {% if variables.cms_rodape.cms_coluna_c is not empty %}
-      <div class="foot-customer-area foot-content flex foot-list" direction="column">
-        <h5>{{ variables.cms_rodape.cms_coluna_c|raw }}</h5>
-        <ul>
-          {% if store.telephone %}
-          <li>
-            <a href="tel:+55{{store.telephone}}">
-              <i class="fa-solid fa-square-phone">
-              </i> {{store.telephone}}
-            </a>
-          </li>
-          {% endif %}
-          {% if variables.cms_redes_sociais.cms_telefone_whats is not empty %}
-          <li>
-            <a href="https://api.whatsapp.com/send?phone=55{{ variables.cms_redes_sociais.cms_telefone_whats }}" target="_blank">
-              <i class="fa-brands fa-whatsapp-square">
-              </i> {{tel_formatado}}
-            </a>
-          </li>
-          {% endif %}
-          {% if store.email_sac %}
-          <li>
-            <a href="mailto:{{store.email_sac}}">
-              <i class="fa-solid fa-square-envelope">
-              </i> {{store.email_sac}}
-            </a>
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-      {% endif %}
+<footer class="norton-footer">
+  <section class="section-sobre">
+    <div class="norton-footer-sobre">
+      <h3>Sobre a loja
+      </h3>
+      <hr>
+      <p>Prezamos pelo respeito ao próximo sempre colocando a satisfação dos nossos clientes em primeiro lugar. Oferecemos produtos de qualidade e com preços justos.
+      </p>
     </div>
-  </div>
-  {% endif %}
-  {% if variables.cms_rodape.cms_bg_creditos is not empty %}
-  <div class="foot-copyright">
-    <div class="foot-container foot-container-copyright flex" justify-content="space-between">
-      <div class="foot-copy foot-content">
-        <div>
-          <b>{{ store.name | raw }}</b> - TODOS OS DIREITOS RESERVADOS.
-        </div>
-        <div>
-          CNPJ: {{store.cnpj}}
-        </div>
-        <div>
-          Proibida a reprodução total ou parcial. Preços e estoque sujeitos a
-          alteração sem aviso prévio.
-        </div>
-      </div>
-      <div class="foot-content">
-        {{ banners.getByTag(['bandeiras-pagamento','and']) }}
-      </div>
+    <div class="norton-footer-redes">
+      <h3>Redes Sociais
+      </h3>
+      <hr>
+      <a href="https://www.facebook.com/norton.online/" class="norton-redes" target="_blank">
+        <img src="{{ variables.icones_loja.facebook_white }}" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/nortononlinee/" class="norton-redes" target="_blank">
+        <img src="{{ variables.icones_loja.instagram_white }}" alt="Instagram">
+      </a>
     </div>
+  </section>
+  <section class="section-categorias">
+    <h3>Categorias
+    </h3>
+    <hr>
+    {#
+    {% include 'snippets/menu_header_footer.tpl' %}
+    #}
+    <style>
+      .list-categories-norton{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+      }
+      .list-categories-norton > li > a{
+        padding: 0!important;
+      }
+    </style>
+     <section>
+    <div class="navigation__right">
+  <div id="menu">
+    <ul class="list-categories-norton">
+      {% set categoryLimit = variables.cms_cabecalho.cms_category_limit %}
+      {% set categoryLimit = categoryLimit < categories|length ? categoryLimit : categories|length + 1 %}
+      {% set categoryCount = 0 %}
+      {% set categoryIndex = 0 %}
+      {% for category in categories %} 
+      {% set categoryCount = categoryCount + 1 %}
+      {% if (categoryCount < categoryLimit) %}
+      {% set categoryPos = '' %}
+      <!-- load category media -->
+      {% set categoryTag = 'menu_' ~ category.name|convert_encoding('UTF-8', 'ISO-8859-1')|slug('_')|lower %}
+      {% set categoryMedia = showcase.getByTag(categoryTag) %}
+      {% if categoryMedia == false %}
+      {% set categoryMedia = banners.getByTag([categoryTag]) %}
+      {% endif %}
+      <!-- defines dropdown position -->
+      {% if variables.cms_cabecalho.cms_menu_full and (category.subCategories|length > 24) %}
+      {% set categoryPos = 'drop-full' %}
+      {% elseif categoryMedia %}
+      {% set categoryPos = 'drop-center' %}
+      {% elseif categories|length > 4 %}
+      {% set categoryIndex = categoryIndex + 1 %}
+      {% set leftCount = ((categories|length / 3) * 2)|round %}
+      {% if categoryIndex > leftCount %}
+      {% set categoryPos = 'drop-right' %}
+      {% endif %}
+      {% endif %}
+      <li class="has-sub has-sub-main">
+        <a href="{{category.url}}">
+          {% if category.img_h %}
+          <img alt="icone_categoria" class="menu-icon" src="{{category.img_h}}" />
+          {% endif %}    
+          {{category.name | raw}}
+        </a>
+        <!-- defines column count -->
+      </li>
+      {% endif %}
+      {% endfor %}
+      {% if (categoryCount > categoryLimit) %}
+      {% endif %}
+      {% if categoryCount > 10 and categoryLimit > 10 %}
+      <script>
+        $('.header-menu').addClass('extended');
+      </script>
+      {% endif %}
+    </ul>
   </div>
+</div>
+</div>
+</div>
+  </section>
+  </section>
+  {% if variables.cms_rodape.cms_coluna_b is not empty %}
+  <section class="section-institucional">
+    <h3>{{ variables.cms_rodape.cms_coluna_b|raw }}</h3>
+    <hr>
+    <ul>
+      {% for page in pages|slice(0,10) %}
+      <li>
+        <a href="{{page.url}}">{{ page.title | raw }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+ 
   {% endif %}
+  <section class="section-contato">
+    <div class="atendimento">
+      <h3>Central de Atendimento
+      </h3>
+      <hr>
+      <ul>
+        <li>
+          <img src="{{ variables.icones_loja.telefone_white }}" alt="Icone">
+          <p>{{ fixo_formatado }}</p>
+        </li >
+        <li>
+          <img src="{{ variables.icones_loja.whatsapp_white }}" alt="Icone">
+          <p>{{ tel_formatado }}
+          </p>
+        </li >
+        <li>
+          <img src="{{ variables.icones_loja.email_white }}" alt="Icone">
+          <p>{{ variables.informacoes_loja.e_mail_atendimento }}
+          </p>
+        </li >
+      </ul>
+    </div>
+    <div class="horario">
+      <h3>Horário de Atendimento
+      </h3>
+      <hr>
+      <p>Seg a sex de {{ variables.informacoes_loja.horario_inicio }}h ás {{ variables.informacoes_loja.horario_final }}h
+      </p>
+    </div>
+  </section>
 </footer>
-<!--Inclusão dos Popups e Alertas-->
+{% if variables.cms_rodape.cms_bg_creditos is not empty %}
+<div class="foot-copyright">
+  <div class="foot-container foot-container-copyright flex" justify-content="space-between">
+    <div class="foot-copy foot-content">
+      <div>
+        <b>{{ store.name | raw }}</b> - TODOS OS DIREITOS RESERVADOS.
+      </div>
+      <div>
+        CNPJ: {{store.cnpj}}
+      </div>
+      <div>
+        Proibida a reprodução total ou parcial. Pre?os e estoque sujeitos a
+        alteração sem aviso prévio.
+      </div>
+    </div>
+    <div class="foot-content">
+      {{ banners.getByTag(['bandeiras-pagamento','and']) }}
+    </div>
+  </div>
+</div>
+{% endif %}
+<!--Inclus?o dos Popups e Alertas-->
 {% include 'snippets/popup.tpl' %}
 {{ banners.getByTag(['popup-entrada'],'and') }}
 {{ banners.getByTag(['popup-saida'],'and') }}
 {{ banners.getByTag(['popup-produto'],'and') }}
-<!--Fim inclusão-->
+<!--Fim inclus?o-->
 {% endif %}
 <script>
   /* BACKTO-TOP */

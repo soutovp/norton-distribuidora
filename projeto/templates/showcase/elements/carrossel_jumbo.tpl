@@ -1,6 +1,10 @@
 {% if element.products|length > 0 %}
 <style>
   /*-- CSS Jumbo --*/
+  .element-container{
+    width: 90%;
+    margin: auto;
+  }
   .element-jumbo {
     max-width: 100%;
     margin: 30px auto 100px;
@@ -286,7 +290,7 @@
     }
   }
 </style>
-<div class="element-container w-100 element-jumbo" id="element-products-{{element.id}}">
+<div class="element-container element-jumbo" id="element-products-{{element.id}}">
   {% if element.title is not empty %}
   <div class="title">
     <h2>{{element.title|raw}}</h2>

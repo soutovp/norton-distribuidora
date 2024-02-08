@@ -48,6 +48,10 @@
     text-overflow: ellipsis;
     max-height: 100%;
   }
+  .product-card-coverflow .discount-chip{
+    width: 100%;
+
+  }
   .product-card-coverflow .discount-chip span {
     padding: 0;
     height: 2.5rem;
@@ -55,6 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
   .cover-quickview-button {
     z-index: 1;

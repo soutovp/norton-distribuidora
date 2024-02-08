@@ -27,7 +27,8 @@
     min-height: 80px;
   }
   #side-cart #item-name {
-    color: var(--cor-txt-nome-prto);
+    /*color: var(--cor-txt-nome-prto);*/
+    color: red;
     margin-bottom: 5px;
     font-size: 80%;
     overflow: hidden;
@@ -87,9 +88,9 @@
     outline: none;
   }
   #side-cart .prod-quantity-cart {
-    max-width: 100px;
-    width: 100px;
-    height: 21px;
+    max-width: 150px;
+    width: 150px;
+    height: 25px;
   }
   #side-cart .item-right {
     min-width: 100px;
@@ -98,7 +99,7 @@
     margin-right: 5px;
   }
   #side-cart #item-subtotal {
-    font-size: 80%;
+    font-size: 125%;
     font-weight: 400;
     color: var(--cor-txt-prc-prto);
   }
