@@ -251,10 +251,10 @@
      font-weight: 500;
    }
    #menu>ul>li>a:hover {
-    color: #FFF;
-    /*
+    /* color: #FFF; */
+    
      color: var(--norton-vermelho-geral);
-     */
+    
    }
    #menu>ul>li.is-active a {
      font-weight: 600;
@@ -679,6 +679,36 @@
    .img-hamburger-menu{
      margin: 0 5px;
    }
+   .norton_menu_a{
+    color: #000!important;
+   }
+   #menu .list-categories-norton {
+      width: 100%;
+      width: -moz-max-content;
+      max-width: 100%;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+   .list-categories-norton > li{
+    padding: 16px 0;
+    width: 100%;
+   }
+   .list-categories-norton > li{
+    padding: 16px 0;
+    width: 100%;
+   }
+   .list-categories-norton > li:hover{
+    border: 0px solid transparent;
+   }
+   .list-categories-norton > li:hover a{
+    color: red!important;
+   }
+   #menu>ul>li>a::after{
+    background: none!important;
+   }
  </style>
  {% endif %}
  {# MENU #}
@@ -691,9 +721,9 @@
      </div>
      <div class="navigation__right">
        <div id="menu">
-         <ul class="list-categories">
+         <ul class="list-categories-norton">
            {% set categoryLimit = variables.cms_cabecalho.cms_category_limit / 2 %}
-           {% set categoryLimit = categoryLimit < categories|length ? categoryLimit : categories|length + 1 %}
+           {% set categoryLimit = categories|length %}
            {% set categoryCount = 0 %}
            {% set categoryIndex = 0 %}
            {% for category in categories %} 
@@ -725,7 +755,7 @@
                <i class="far fa-angle-up"></i> 
              </span> #}
              {% endif %}
-             <a href="{{category.url}}">
+             <a href="{{category.url}}" class="norton_menu_a">
                {% if category.img_h %}
                <img alt="icone_categoria" class="menu-icon" src="{{category.img_h}}" />
                {% endif %}    

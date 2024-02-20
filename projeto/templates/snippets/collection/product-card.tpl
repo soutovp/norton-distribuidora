@@ -45,14 +45,14 @@
   <div class="card-body flex" wrap="true" align-items="center">
     {% if card_direction == "row" %}
     <div class="list-only flex w-100">
-      <div class="product-card-title flex text-center" justify-content="center"> 
+      <div class="product-card-title flex text-center" justify-content="center">
         <a href="{{product.url}}">{{product.name|raw}}</a>
       </div>
       <div class="product-card-sku">{{product.sku}}</div>
     </div>
     {% else %}
     <div class="product-card-title flex text-center grid-only w-100" justify-content="center">
-      <a href="{{product.url}}">{{product.name|raw}}</a>
+      <a id="norton-product-card-title" href="{{product.url}}">{{product.name|raw}}</a>
     </div>
     {% endif %}
     <div class="product-card-rating-buttons flex w-100">

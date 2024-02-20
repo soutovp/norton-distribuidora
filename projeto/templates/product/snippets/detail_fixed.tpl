@@ -154,7 +154,7 @@
     {% endif %}
     <div class="buy-detail-fixed flex" align-items="center">
       <div class="price-detail-fixed">
-        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-values">
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-values" style="font-size:5px;">
           {% if product.stock > 0 %}
           <link itemprop="availability" href="http://schema.org/InStock" />
           {% else %}

@@ -15600,7 +15600,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 /*4. MODULES */
 .navigation {
   /*background-color: #000;*/
-  background: linear-gradient(180deg, #555, #333);
+  /* background: linear-gradient(180deg, #555, #333); */
+  background-color: #555;
   border-top: 1px solid #DD1836;
 }
 

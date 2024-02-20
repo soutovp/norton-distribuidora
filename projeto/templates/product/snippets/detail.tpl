@@ -175,16 +175,17 @@
     /* flex-direction: column; */
     /* align-items: flex-start; */
   }
-  section.product-page .currentPrice > .installment-plan > b{
+  section.product-page .currentPrice > .installment-plan b{
     color: red;
     font-weight: 900;
   }
-  section.product-page .currentPrice > .installment-plan > b:first-of-type{
-    font-size: 5em;
-    display: block;
+  section.product-page .currentPrice > .installment-plan > .price > b:first-of-type{
+    color:gray;
+    text-decoration:line-through;
   }
-  section.product-page .currentPrice > .installment-plan > b:nth-of-type(2){
-    font-size: 2.5em;
+  section.product-page .currentPrice > .installment-plan > .price > span{
+    margin-right: 1em;
+    font-size: 1em;
   }
   .product-details-content .procuct-detail .header-title {
     gap: 10px;
@@ -385,8 +386,22 @@
   #product-details .product-values .currentPrice .price {
     font-size: 2rem;
     color: #888888;
-    opacity: .7;
+    opacity: 1;
     font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  #product-details .product-values .currentPrice .price > b:last-of-type{
+    background: red;
+    padding: 5px 10px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
   }
   #product-details .product-values .currentPrice .price.slash {
     opacity: 0.7;
@@ -549,7 +564,7 @@
   /*--RESPONSIVO PG PRODUTO--*/
   @media (max-width: 1440px){
     #product-details .product-values .currentPrice .price{
-      font-size: 4em;
+      font-size: 1em;
     }
   }
   @media (max-width: 1200px) {
@@ -563,6 +578,8 @@
     }
     #product-details .product-values .currentPrice .price {
       font-size: 1.5em;
+      display: flex;
+      justify-content: center;
     }
     #product-details .product-values .currentPrice .price.slash {
       font-size: 1em;
@@ -745,7 +762,11 @@
             document.getElementById('titulo-produto-norton').innerText = produto_norton.toLowerCase();
           </script>
           {% if product.description_small %}
-          <p>{{ product.description_small|raw }}</p>
+          <p id="norton-description-small" style="text-transform: capitalize;">{{ product.description_small|raw }}</p>
+          <script>
+            const produto_description_small = document.getElementById('norton-description-small').innerText;
+            document.getElementById('norton-description-small').innerText =produto_description_small.toLowerCase();
+          </script>
           {% endif %}
           {% if show_rating %}
           <div class="product-rating flex w-100" {% if product.rating.count > 0 %} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"  {% endif %}>

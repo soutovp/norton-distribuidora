@@ -68,7 +68,7 @@
     }
 </style>
 <div class="description_list">
-    <h2>Informações sobre o produto</h2>
+    <h2>InformaÃ§Ãµes sobre o produto</h2>
     <div class="tabs">
         {% for item in description %}
         <div class="tab">
