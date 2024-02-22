@@ -4,7 +4,7 @@
             <nav class="pagination" role="navigation" aria-label="Products">
                 <div class="nav-links">
                     {% if current > 1 %}
-                        <a class="prev page-numbers" title="Página anterior" href="{{ url("current",{"page":(current-1)}) }}"><i class="far fa-long-arrow-left"></i></a>
+                        <a class="prev page-numbers" title="PÃ¡gina anterior" href="{{ url("current",{"page":(current-1)}) }}"><i class="far fa-long-arrow-left"></i></a>
                     {% endif %}
                     {% for i in 1..total %}
                         {% if 0 == (current - nearbyPagesLimit) - loop.index %}
@@ -34,7 +34,7 @@
                         <a class="page-numbers" href="{{ url("current",{"page":total}) }}">{{ total }}</a>
                     {% endif %}
                     {% if current < total %}
-                        <a class="next page-numbers" title="Próxima página" href="{{ url("current",{"page":(current+1)}) }}"><i class="far fa-long-arrow-right"></i></a>
+                        <a class="next page-numbers" title="Prï¿½xima pï¿½gina" href="{{ url("current",{"page":(current+1)}) }}"><i class="far fa-long-arrow-right"></i></a>
                     {% endif %}
                 </div>
             </nav>

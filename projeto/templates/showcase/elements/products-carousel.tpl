@@ -14,7 +14,7 @@
          data-dots="{{element.dots?'true':'false'}}"
          data-speed="1000"
          data-timeout="5000"
-         data-items-mobile="{{ variables.cms_grade_produtos.cms_mobile_dual_col ? 2 : 1 }}"
+         data-items-mobile="{{ variables.cms_grade_produtos.cms_mobile_dual_col ? 1 : 1 }}"
          data-items="{{element.items}}"
          data-margin="15"
          followFinger="false"

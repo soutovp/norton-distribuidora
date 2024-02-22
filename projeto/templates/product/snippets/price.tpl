@@ -12,25 +12,25 @@
 <div class='installment-plan'>
   <div class="price" data-element="sale-price">
     {{('<b>'~currency.format(currency.val(product.price.sale))~'</b>')|raw}}
-    {{ ('<b>'~'<span><img src="'~variables.icones_loja.arrow~'" width="1em"></span>'~paymentData.discount_rate~'%</b>')|raw }}
+    {{ ('<b>'~'<span><img src="'~variables.icones_loja.arrow~'" width="15em"></span>'~paymentData.discount_rate~'%</b>')|raw }}
   </div>
   
   <br>
 
-  {{ ('<b style="font-size: 5em;">'~currency.format(paymentData.upfront)~'</b>')|raw}}
+  {{ ('<b style="font-size: 5em;">'~currency.format(paymentData.upfront)~'</b> <span style="font-size:1.5em;">à vista</span>')|raw}}
 
   <br>
 
   {% if paymentData.installments.max > 0 %}
-    {{('<b style="font-size: 1.5em;">'~paymentData.installments.max~'x</b> <b style="font-size: 2.5em;">'~currency.format(paymentData.installments.max_value)~'</b> no cartão<br>')|raw}}
+    {{('<span style="font-size: 1.5em;">Ou</span> '~'<b style="font-size: 1.5em;">'~paymentData.installments.max~'x</b> <b style="font-size: 1.5em;">'~currency.format(paymentData.installments.max_value)~'</b> <span style="font-size: 1.5em;">no cartão</span><br>')|raw}}
   {% endif %}
     
   {% if paymentData.installments.max <= 0 and paymentData.discount_rate <= 0%}
     {% if paymentData.installments.best > 0 %}
-      {{('<b style="font-size: 2.5em; display: block;">'~paymentData.installments.best~'x</b> de <b style="font-size: 5em;">'~currency.format(paymentData.installments.best_value)~' sem juros</b>')|raw}}
+      {{('ou '~'<b style="font-size: 2.5em; display: block;">'~paymentData.installments.best~'x</b> de <b style="font-size: 5em;">'~currency.format(paymentData.installments.best_value)~' sem juros</b>')|raw}}
     {% endif %}
   {% elseif payment.installments.best > 0 %}
-    {{('<b style="font-size: 2em">'~paymentData.installments.best~'x</b> de <b style="font-size: 2em">'~currency.format(paymentData.installments.best_value)~' sem juros</b>')|raw}}
+    {{('ou '~'<b style="font-size: 2em">'~paymentData.installments.best~'x</b> de <b style="font-size: 2em">'~currency.format(paymentData.installments.best_value)~' sem juros</b>')|raw}}
     {# {{(paymentData.installments.best>0 ? '<b style="font-size: 5em; display: block;">'~paymentData.installments.best~'x</b> de <b style="font-size: 2.5em;">'~currency.format(paymentData.installments.best_value)~' sem juros</b>':'')|raw}} #}
   {% endif %}
   

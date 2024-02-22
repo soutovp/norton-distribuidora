@@ -133,9 +133,9 @@
           </i>
         </div>
         <div class="text">
-          <b>Fa�a Login/Cadastro
+          <b>Faça Login/Cadastro
           </b>
-          <br>para ter acesso ao pre�o deste produto.
+          <br>para ter acesso ao preço deste produto.
         </div>
       </div>
       {% else %}
@@ -152,7 +152,7 @@
       {% elseif product.price.list > 0 %}
       <div class="chip out-of-stock text-center flex" gap="10" align-items="center" justify-content="center">
         <i class="fas fa-times-circle">
-        </i> Indispon�vel
+        </i> Indisponível
       </div>
       {% endif %}
     </div>

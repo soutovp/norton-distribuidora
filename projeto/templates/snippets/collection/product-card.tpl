@@ -55,7 +55,7 @@
       <a id="norton-product-card-title" href="{{product.url}}">{{product.name|raw}}</a>
     </div>
     {% endif %}
-    <div class="product-card-rating-buttons flex w-100">
+    {# <div class="product-card-rating-buttons flex w-100">
       {% if product.rating %}
       <div class="product-card-rating flex" direction="row" wrap="false" align-items="center" justify-content="center">
         {% include 'snippets/collection/product-card-rating.tpl' %}
@@ -75,7 +75,7 @@
           </i>
         </span>
       </a>
-    </div>
+    </div> #}
     <ul class="product-card-marks position-absolute flex" direction="column">
       {% if product.marks.new %}
       <li class="mark-new text-center">

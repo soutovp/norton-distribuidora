@@ -680,7 +680,7 @@
   </style>
   {% endif %}
   {# MENU #}
-  <div id="menu" class="navigation">
+  <div id="menu" class="navigation" style="opacity: 1; display: block; transition: .2s;">
     <div class="ps-container">
       {# BOTÃO MENU CATEGORIAS #}
       <div class="navigation__left">
@@ -893,23 +893,26 @@
     let pode = 'grande';
     window.onscroll = ()=>{
       if (window.pageYOffset >= 250 && pode === 'pequeno') {
-        console.log('Aumentou!');
         pode = 'grande';
-        norton_image_logo.classList.add("norton-image-size");
+        {#norton_image_logo.classList.add("norton-image-size");#}
+        norton_image_logo.style.width = '10em';
         header__content.style.padding = '10px 0';
       } else if(window.pageYOffset <= 150 && pode === 'grande') {
         console.log('Diminuiu!');
         pode = 'pequeno';
-        norton_image_logo.classList.remove('norton-image-size');
+        {#norton_image_logo.classList.remove('norton-image-size');#}
+        norton_image_logo.style.width = '20em';
         header__content.style.padding = '20px 0';
       }
       if(podeMenu){
         if(window.pageYOffset >= 100){
           podeMenu = false;
-          menu.style.display = 'none';
+          menu.style.opacity = '0';
+          menu.style.display= 'none';
         }else{
           podeMenu = false;
-          menu.style.display = 'block';
+          menu.style.display= 'block';
+          menu.style.opacity = '1';
         }
         setTimeout(()=>{podeMenu = true}, 50);
       }

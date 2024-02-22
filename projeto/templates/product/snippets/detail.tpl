@@ -402,6 +402,7 @@
     align-items: center;
     justify-content: center;
     width: fit-content;
+    gap: .2em;
   }
   #product-details .product-values .currentPrice .price.slash {
     opacity: 0.7;

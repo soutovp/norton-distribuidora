@@ -475,13 +475,15 @@
      }
      #menu>ul>li.has-sub>a {
        padding: 15px;
-       width: 100%;
+       width: 100%!important;
        align-items: flex-start;
        -webkit-transition: all 0.25s ease-out;
        -moz-transition: all 0.25s ease-out;
        -ms-transition: all 0.25s ease-out;
        -o-transition: all 0.25s ease-out;
        transition: all 0.25s ease-out;
+       display: flex;
+       align-items: center;
      }
      #menu>ul>li:hover>a,
      #menu>ul>li.active>a {
@@ -721,7 +723,7 @@
      </div>
      <div class="navigation__right">
        <div id="menu">
-         <ul class="list-categories-norton">
+         <ul class="list-categories-norton-mobile">
            {% set categoryLimit = variables.cms_cabecalho.cms_category_limit / 2 %}
            {% set categoryLimit = categories|length %}
            {% set categoryCount = 0 %}

@@ -15446,6 +15446,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .menu--product-categories .menu--dropdown > .has-mega-menu {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu--product-categories:hover .menu__content {
@@ -15651,6 +15655,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .navigation .navigation__left {
   max-width: 260px;
+  position: absolute;
 }
 
 .navigation .navigation__right {
@@ -15659,6 +15664,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   justify-content: space-between;
   align-items: center;
   padding-left: 35px;
+  justify-content: center;
 }
 
 .header .header__extra {
